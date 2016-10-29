@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.github.robwalton.ulysses-alfred-workflow</string>
+	<string>com.github.robwalton.alfred-ulysses-workflow</string>
 	<key>connections</key>
 	<dict>
 		<key>00659145-0CEA-422B-A253-D70928DC6CC7</key>
@@ -78,6 +78,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</key>
+		<array/>
 		<key>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</key>
 		<array>
 			<dict>
@@ -281,19 +283,6 @@ sys.stdout.write(msg)</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>largetypetext</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>8F5A4BC1-5297-4C87-9B3A-783787C68CEE</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -311,6 +300,19 @@ sys.stdout.write(msg)</string>
 			<string>EFED13DD-773D-419D-9EEB-695267FCCF4C</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>largetypetext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>8F5A4BC1-5297-4C87-9B3A-783787C68CEE</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -784,6 +786,8 @@ sys.stdout.write(json.dumps({'items': items}))
 		</dict>
 		<key>31247F5F-C0FC-46BB-AEEB-33B53A0EA869</key>
 		<dict>
+			<key>note</key>
+			<string>Copy and paste {query} into 'Open' dialogue field</string>
 			<key>xpos</key>
 			<integer>700</integer>
 			<key>ypos</key>
@@ -909,6 +913,6 @@ sys.stdout.write(json.dumps({'items': items}))
 	<key>version</key>
 	<string>.9.0</string>
 	<key>webaddress</key>
-	<string>github.com/robwalton/ulysses-alfred-workflow</string>
+	<string>github.com/robwalton/alfred-ulysses-workflow</string>
 </dict>
 </plist>
