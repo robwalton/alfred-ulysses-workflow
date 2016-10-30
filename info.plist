@@ -79,7 +79,18 @@
 			</dict>
 		</array>
 		<key>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DABDC35B-CA56-49D7-9680-349DA1245F3A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</key>
 		<array>
 			<dict>
@@ -98,6 +109,32 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>69DDE1AD-4895-406B-888A-A97187FD7D97</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>521BAB9A-AD76-4EFF-88C0-CE3A9C7443DE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>728DEB07-94D7-4C29-A6C9-F535A165AF9C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5E5DAD91-5B27-49C8-A06E-91755374AAFF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A59F421D-B415-4617-BF35-68E721C05B26</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -171,24 +208,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>BFDF7A50-3DFD-4F18-AD1F-5FBDD6B5202A</key>
+		<key>DABDC35B-CA56-49D7-9680-349DA1245F3A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8F5A4BC1-5297-4C87-9B3A-783787C68CEE</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>EFED13DD-773D-419D-9EEB-695267FCCF4C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>BFDF7A50-3DFD-4F18-AD1F-5FBDD6B5202A</string>
+				<string>521BAB9A-AD76-4EFF-88C0-CE3A9C7443DE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -276,7 +300,7 @@ sys.stdout.write(msg)</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>BFDF7A50-3DFD-4F18-AD1F-5FBDD6B5202A</string>
+			<string>A59F421D-B415-4617-BF35-68E721C05B26</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -286,7 +310,7 @@ sys.stdout.write(msg)</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>u:help</string>
+				<string>u:setview</string>
 				<key>subtext</key>
 				<string>Show commands (u:help)</string>
 				<key>text</key>
@@ -297,22 +321,9 @@ sys.stdout.write(msg)</string>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>EFED13DD-773D-419D-9EEB-695267FCCF4C</string>
+			<string>5E5DAD91-5B27-49C8-A06E-91755374AAFF</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>largetypetext</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>8F5A4BC1-5297-4C87-9B3A-783787C68CEE</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -453,6 +464,40 @@ sys.stdout.write(json.dumps({'items': items}))
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>keychar</key>
+				<string>3</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>1048576</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>DABDC35B-CA56-49D7-9680-349DA1245F3A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>keychar</key>
+				<string>2</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>1048576</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>728DEB07-94D7-4C29-A6C9-F535A165AF9C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>argumenttype</key>
@@ -516,6 +561,45 @@ sys.stdout.write(json.dumps({'items': items}))</string>
 			<string>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>.5</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>521BAB9A-AD76-4EFF-88C0-CE3A9C7443DE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  #activate application "Ulysses"  delay .4  tell application "System Events" to tell process "Ulysses"    tell menu item "Sheets" of menu "View" of menu bar item "View" of menu bar 1
+      if value of attribute "AXMenuItemMarkChar" is not "✓" then click    end tell  end tell
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>59067D09-CAB1-479C-91EB-B41247C95E4E</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -749,7 +833,11 @@ sys.stdout.write(json.dumps({'items': items}))
 - u 				Open group or sheet (cmd-return to drill down)
 - ug				Open group (cmd-return to drill down)
 - us				Open sheet
-- uo &lt;arg&gt;		Search for &lt;arg&gt; within Ulysses’ Open dialogue</string>
+- uo &lt;arg&gt;		Search for &lt;arg&gt; within Ulysses’ Open dialogue
+
+- u:setview      Set the view into switch to after opening an item. 
+
+By default Ulysses will largely use the 3 pane default view. The setview feature is a little schonky. Choose one of: Default, Library (cmd-1), Sheets (cmd-2), Editor Only (cmd3)</string>
 	<key>uidata</key>
 	<dict>
 		<key>00659145-0CEA-422B-A253-D70928DC6CC7</key>
@@ -757,14 +845,14 @@ sys.stdout.write(json.dumps({'items': items}))
 			<key>xpos</key>
 			<integer>90</integer>
 			<key>ypos</key>
-			<integer>410</integer>
+			<integer>530</integer>
 		</dict>
 		<key>0081F279-3540-4D3D-B6EF-77D6BAC59961</key>
 		<dict>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>770</integer>
+			<integer>890</integer>
 		</dict>
 		<key>00BD6A29-202D-43EC-AA4A-938C4536971B</key>
 		<dict>
@@ -773,7 +861,7 @@ sys.stdout.write(json.dumps({'items': items}))
 			<key>xpos</key>
 			<integer>590</integer>
 			<key>ypos</key>
-			<integer>730</integer>
+			<integer>850</integer>
 		</dict>
 		<key>18104AA0-772A-4E62-BFE9-AB021444E7B2</key>
 		<dict>
@@ -782,7 +870,7 @@ sys.stdout.write(json.dumps({'items': items}))
 			<key>xpos</key>
 			<integer>330</integer>
 			<key>ypos</key>
-			<integer>580</integer>
+			<integer>700</integer>
 		</dict>
 		<key>31247F5F-C0FC-46BB-AEEB-33B53A0EA869</key>
 		<dict>
@@ -791,42 +879,65 @@ sys.stdout.write(json.dumps({'items': items}))
 			<key>xpos</key>
 			<integer>700</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>270</integer>
 		</dict>
 		<key>32191D19-A476-42F9-AB5C-85DAFC4AC58C</key>
 		<dict>
 			<key>xpos</key>
 			<integer>480</integer>
 			<key>ypos</key>
-			<integer>550</integer>
+			<integer>670</integer>
 		</dict>
 		<key>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>700</integer>
+			<integer>650</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>450</integer>
 		</dict>
 		<key>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</key>
 		<dict>
 			<key>xpos</key>
 			<integer>500</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>270</integer>
 		</dict>
 		<key>51639D3C-CF18-491E-846B-4C6771C1CFA5</key>
 		<dict>
 			<key>xpos</key>
 			<integer>160</integer>
 			<key>ypos</key>
-			<integer>770</integer>
+			<integer>890</integer>
+		</dict>
+		<key>521BAB9A-AD76-4EFF-88C0-CE3A9C7443DE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>890</integer>
+			<key>ypos</key>
+			<integer>570</integer>
 		</dict>
 		<key>570D9B3F-6F65-4691-8316-4FA72F721DDF</key>
 		<dict>
 			<key>xpos</key>
 			<integer>680</integer>
 			<key>ypos</key>
-			<integer>810</integer>
+			<integer>930</integer>
+		</dict>
+		<key>59067D09-CAB1-479C-91EB-B41247C95E4E</key>
+		<dict>
+			<key>note</key>
+			<string>Put into sheets view (cmd-2) BUT OSX needs alfred accesibility access</string>
+			<key>xpos</key>
+			<integer>680</integer>
+			<key>ypos</key>
+			<integer>630</integer>
+		</dict>
+		<key>5E5DAD91-5B27-49C8-A06E-91755374AAFF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>90</integer>
+			<key>ypos</key>
+			<integer>150</integer>
 		</dict>
 		<key>69DDE1AD-4895-406B-888A-A97187FD7D97</key>
 		<dict>
@@ -835,7 +946,14 @@ sys.stdout.write(json.dumps({'items': items}))
 			<key>xpos</key>
 			<integer>320</integer>
 			<key>ypos</key>
-			<integer>800</integer>
+			<integer>920</integer>
+		</dict>
+		<key>728DEB07-94D7-4C29-A6C9-F535A165AF9C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>960</integer>
+			<key>ypos</key>
+			<integer>460</integer>
 		</dict>
 		<key>73DEDE47-4567-41B2-8451-CD99D7C4A688</key>
 		<dict>
@@ -844,56 +962,49 @@ sys.stdout.write(json.dumps({'items': items}))
 			<key>xpos</key>
 			<integer>590</integer>
 			<key>ypos</key>
-			<integer>840</integer>
+			<integer>960</integer>
 		</dict>
 		<key>79767E79-7CDE-4F19-9743-378A6071DA2C</key>
 		<dict>
 			<key>xpos</key>
 			<integer>290</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>270</integer>
 		</dict>
 		<key>7D4D1AE2-9B65-4AAE-A2A1-E5BED93E012E</key>
 		<dict>
 			<key>xpos</key>
 			<integer>90</integer>
 			<key>ypos</key>
-			<integer>280</integer>
-		</dict>
-		<key>8F5A4BC1-5297-4C87-9B3A-783787C68CEE</key>
-		<dict>
-			<key>xpos</key>
-			<integer>500</integer>
-			<key>ypos</key>
-			<integer>20</integer>
+			<integer>400</integer>
 		</dict>
 		<key>93302667-ABA4-40C9-BB0B-B788FD818178</key>
 		<dict>
 			<key>xpos</key>
 			<integer>90</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>270</integer>
 		</dict>
-		<key>BFDF7A50-3DFD-4F18-AD1F-5FBDD6B5202A</key>
+		<key>A59F421D-B415-4617-BF35-68E721C05B26</key>
 		<dict>
 			<key>xpos</key>
 			<integer>290</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>150</integer>
 		</dict>
-		<key>EFED13DD-773D-419D-9EEB-695267FCCF4C</key>
+		<key>DABDC35B-CA56-49D7-9680-349DA1245F3A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>810</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>450</integer>
 		</dict>
 		<key>F384B949-9A4E-45AF-9E6E-69374567C35F</key>
 		<dict>
 			<key>xpos</key>
 			<integer>90</integer>
 			<key>ypos</key>
-			<integer>550</integer>
+			<integer>670</integer>
 		</dict>
 		<key>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</key>
 		<dict>
@@ -902,7 +1013,7 @@ sys.stdout.write(json.dumps({'items': items}))
 			<key>xpos</key>
 			<integer>330</integer>
 			<key>ypos</key>
-			<integer>440</integer>
+			<integer>560</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
