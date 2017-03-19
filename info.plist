@@ -82,7 +82,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>DABDC35B-CA56-49D7-9680-349DA1245F3A</string>
+				<string>EF6BADBE-B2C7-4FDC-937B-A6BD2DE8CB7F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -117,19 +117,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>521BAB9A-AD76-4EFF-88C0-CE3A9C7443DE</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>728DEB07-94D7-4C29-A6C9-F535A165AF9C</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>5E5DAD91-5B27-49C8-A06E-91755374AAFF</key>
 		<array>
 			<dict>
@@ -148,6 +135,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>0081F279-3540-4D3D-B6EF-77D6BAC59961</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>706835D1-B6A5-4C13-BB95-B0345C03AF2B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AF03267C-4E8A-4774-BE9F-B9526C2A1863</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -208,11 +208,50 @@
 				<false/>
 			</dict>
 		</array>
-		<key>DABDC35B-CA56-49D7-9680-349DA1245F3A</key>
+		<key>A59F421D-B415-4617-BF35-68E721C05B26</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>521BAB9A-AD76-4EFF-88C0-CE3A9C7443DE</string>
+				<string>D25B7FD6-0BB6-41C2-A093-C5DDF80A5341</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B863CF57-7996-4E7A-943C-AA825002824E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>59067D09-CAB1-479C-91EB-B41247C95E4E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D25B7FD6-0BB6-41C2-A093-C5DDF80A5341</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3815FE07-095F-4DE0-8C03-381CECC44FDD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EF6BADBE-B2C7-4FDC-937B-A6BD2DE8CB7F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B863CF57-7996-4E7A-943C-AA825002824E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -236,6 +275,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FB4DF08D-791C-4835-8DD2-737A778E5D3F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D4943A5-2135-4285-87CF-E842DBB1D7A9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -277,19 +329,10 @@
 				<integer>68</integer>
 				<key>script</key>
 				<string>import sys, os
-from subprocess import check_output
-
-readme = check_output('/usr/libexec/PlistBuddy -c "Print readme" info.plist', shell=True)
 workflow_version = os.environ['SemVer']
-
-msg = """
-# Ulysses Workflow -v %(workflow_version)s #
-
-%(readme)s
-""" % locals()
-
-
-sys.stdout.write(msg)</string>
+sys.stdout.write(workflow_version)
+#from subprocess import check_output
+#readme = check_output('/usr/libexec/PlistBuddy -c "Print readme" info.plist', shell=True)</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -307,10 +350,31 @@ sys.stdout.write(msg)</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>version: {query}</string>
+				<key>title</key>
+				<string>Opening help for Ulysses wokflow</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D25B7FD6-0BB6-41C2-A093-C5DDF80A5341</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>u:setview</string>
+				<string>u:help</string>
 				<key>subtext</key>
 				<string>Show commands (u:help)</string>
 				<key>text</key>
@@ -324,6 +388,165 @@ sys.stdout.write(msg)</string>
 			<string>5E5DAD91-5B27-49C8-A06E-91755374AAFF</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://github.com/robwalton/alfred-ulysses-workflow/blob/master/README.md</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>3815FE07-095F-4DE0-8C03-381CECC44FDD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+import ulysses_view
+view_to_set = sys.argv[1]
+ulysses_view.set_view_setting("group", view_to_set)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2D4943A5-2135-4285-87CF-E842DBB1D7A9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>u:setgroupview</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python ulysses_view.py "group"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Choose view to open groups in</string>
+				<key>title</key>
+				<string>Set Ulysses group view (u:setgroupview)</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FB4DF08D-791C-4835-8DD2-737A778E5D3F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+import ulysses_view
+view_to_set = sys.argv[1]
+ulysses_view.set_view_setting("sheet", view_to_set)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AF03267C-4E8A-4774-BE9F-B9526C2A1863</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>u:setsheetview</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python ulysses_view.py "sheet"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Choose view to open sheets in</string>
+				<key>title</key>
+				<string>Set Ulysses sheet view (u:setsheetview)</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>706835D1-B6A5-4C13-BB95-B0345C03AF2B</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -419,12 +642,7 @@ sys.stdout.write(msg)</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>import sys
-import alfred_ulysses
-import json
-
-items = alfred_ulysses.script_filter_items(alfred_ulysses.SHEET)
-sys.stdout.write(json.dumps({'items': items}))
+				<string>/usr/bin/python ulysses_items.py "sheet"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -435,7 +653,7 @@ sys.stdout.write(json.dumps({'items': items}))
 				<key>title</key>
 				<string>Open Ulysses Sheet</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -443,6 +661,34 @@ sys.stdout.write(json.dumps({'items': items}))
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>7D4D1AE2-9B65-4AAE-A2A1-E5BED93E012E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys, os
+
+import ulysses_view
+
+node_type = os.environ['node_type']
+sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>EF6BADBE-B2C7-4FDC-937B-A6BD2DE8CB7F</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -460,40 +706,6 @@ sys.stdout.write(json.dumps({'items': items}))
 			<string>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>keychar</key>
-				<string>3</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>1048576</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>DABDC35B-CA56-49D7-9680-349DA1245F3A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>keychar</key>
-				<string>2</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>1048576</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>728DEB07-94D7-4C29-A6C9-F535A165AF9C</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -517,12 +729,7 @@ sys.stdout.write(json.dumps({'items': items}))
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>import sys
-import alfred_ulysses
-import json
-
-items = alfred_ulysses.script_filter_items(alfred_ulysses.ALL)
-sys.stdout.write(json.dumps({'items': items}))</string>
+				<string>/usr/bin/python ulysses_items.py "all"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -532,7 +739,7 @@ sys.stdout.write(json.dumps({'items': items}))</string>
 				<key>title</key>
 				<string>Open Ulysses Item</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -542,6 +749,48 @@ sys.stdout.write(json.dumps({'items': items}))</string>
 			<string>00659145-0CEA-422B-A253-D70928DC6CC7</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv	try		#activate application "Ulysses"		set viewToOpen to item 1 of argv		#delay .2		tell application "System Events" to tell process "Ulysses"			tell menu item viewToOpen of menu "View" of menu bar item "View" of menu bar 1				if value of attribute "AXMenuItemMarkChar" is not "✓" then click			end tell		end tell	on error errStr number errorNumber		if the errorNumber is equal to -1719 then			set theAlertText to "Cannot change the View setting in Ulysses."			set theAlertMessage to errStr &amp; "
+			
+Allow Alfred access in the Accessibility section of the Privacy tab of your Mac's Security &amp; Privacy System preferences; or use u:setsheetview and u:setgroupview to se both to Default."						display alert theAlertText message theAlertMessage as critical buttons {"Cancel", "Open Preferences"} default button "Open Preferences" cancel button "Cancel"			--&gt; Result: {button returned:"Open Preferences"}						tell application "System Preferences"				activate				set current pane to pane "com.apple.preference.security"			end tell		else			-- An unknown error occurred. Resignal, so the caller			-- can handle it, or AppleScript can display the number.			error errStr number errorNumber		end if	end tryend run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>59067D09-CAB1-479C-91EB-B41247C95E4E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>B863CF57-7996-4E7A-943C-AA825002824E</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -565,45 +814,6 @@ sys.stdout.write(json.dumps({'items': items}))</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>seconds</key>
-				<string>.5</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>521BAB9A-AD76-4EFF-88C0-CE3A9C7443DE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>on run argv
-  #activate application "Ulysses"  delay .4  tell application "System Events" to tell process "Ulysses"    tell menu item "Sheets" of menu "View" of menu bar item "View" of menu bar 1
-      if value of attribute "AXMenuItemMarkChar" is not "✓" then click    end tell  end tell
-end run</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>59067D09-CAB1-479C-91EB-B41247C95E4E</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>argumenttype</key>
@@ -623,11 +833,7 @@ end run</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>import sys
-import alfred_ulysses
-import json
-items = alfred_ulysses.script_filter_items(alfred_ulysses.GROUP)
-sys.stdout.write(json.dumps({'items': items}))
+				<string>/usr/bin/python ulysses_items.py "group"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -638,7 +844,7 @@ sys.stdout.write(json.dumps({'items': items}))
 				<key>title</key>
 				<string>Open Ulysses Group</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -648,25 +854,6 @@ sys.stdout.write(json.dumps({'items': items}))
 			<string>F384B949-9A4E-45AF-9E6E-69374567C35F</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>SingleLevelSearch</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>32191D19-A476-42F9-AB5C-85DAFC4AC58C</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -709,6 +896,25 @@ sys.stdout.write(json.dumps({'items': items}))
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>SingleLevelSearch</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>570D9B3F-6F65-4691-8316-4FA72F721DDF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>argumenttype</key>
@@ -726,17 +932,7 @@ sys.stdout.write(json.dumps({'items': items}))
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>import sys, os
-import json
-import alfred_ulysses
-
-
-group_path = os.environ['search_in']
-sys.stderr.write("Searching in: " + group_path)
-
-
-items = alfred_ulysses.script_filter_items(alfred_ulysses.ALL, group_path)
-sys.stdout.write(json.dumps({'items': items}))
+				<string>/usr/bin/python ulysses_items.py "group" "$search_in"
 
 </string>
 				<key>scriptargtype</key>
@@ -748,7 +944,7 @@ sys.stdout.write(json.dumps({'items': items}))
 				<key>title</key>
 				<string></string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -758,32 +954,6 @@ sys.stdout.write(json.dumps({'items': items}))
 			<string>0081F279-3540-4D3D-B6EF-77D6BAC59961</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>SingleLevelSearch</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>51639D3C-CF18-491E-846B-4C6771C1CFA5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>seconds</key>
-				<string>.05</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>69DDE1AD-4895-406B-888A-A97187FD7D97</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -800,7 +970,20 @@ sys.stdout.write(json.dumps({'items': items}))
 			<key>type</key>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>570D9B3F-6F65-4691-8316-4FA72F721DDF</string>
+			<string>32191D19-A476-42F9-AB5C-85DAFC4AC58C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>SingleLevelSearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>51639D3C-CF18-491E-846B-4C6771C1CFA5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -823,6 +1006,19 @@ sys.stdout.write(json.dumps({'items': items}))
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>.05</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>69DDE1AD-4895-406B-888A-A97187FD7D97</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>See packal.org/workflow/ulysses for full instructions
@@ -835,194 +1031,286 @@ sys.stdout.write(json.dumps({'items': items}))
 - us				Open sheet
 - uo &lt;arg&gt;		Search for &lt;arg&gt; within Ulysses’ Open dialogue
 
-- u:setview      Set the view into switch to after opening an item. 
-
-By default Ulysses will largely use the 3 pane default view. The setview feature is a little schonky. Choose one of: Default, Library (cmd-1), Sheets (cmd-2), Editor Only (cmd3)</string>
+- u:setsheetview      Set the view into switch to after opening a sheet (defaults to 'Editor Only')
+- u:setgroupview      Set the view into switch to after opening a group (defaults to 'Sheets')</string>
 	<key>uidata</key>
 	<dict>
 		<key>00659145-0CEA-422B-A253-D70928DC6CC7</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
 			<integer>90</integer>
 			<key>ypos</key>
-			<integer>530</integer>
+			<integer>650</integer>
 		</dict>
 		<key>0081F279-3540-4D3D-B6EF-77D6BAC59961</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>470</integer>
 			<key>ypos</key>
-			<integer>890</integer>
+			<integer>960</integer>
 		</dict>
 		<key>00BD6A29-202D-43EC-AA4A-938C4536971B</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>note</key>
 			<string>var:search_in == ""</string>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>660</integer>
 			<key>ypos</key>
-			<integer>850</integer>
+			<integer>900</integer>
 		</dict>
 		<key>18104AA0-772A-4E62-BFE9-AB021444E7B2</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>note</key>
 			<string>var:search_in != ""</string>
 			<key>xpos</key>
-			<integer>330</integer>
+			<integer>300</integer>
 			<key>ypos</key>
-			<integer>700</integer>
+			<integer>820</integer>
+		</dict>
+		<key>2D4943A5-2135-4285-87CF-E842DBB1D7A9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>xpos</key>
+			<integer>290</integer>
+			<key>ypos</key>
+			<integer>150</integer>
 		</dict>
 		<key>31247F5F-C0FC-46BB-AEEB-33B53A0EA869</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
 			<key>note</key>
 			<string>Copy and paste {query} into 'Open' dialogue field</string>
 			<key>xpos</key>
-			<integer>700</integer>
+			<integer>630</integer>
 			<key>ypos</key>
-			<integer>270</integer>
+			<integer>390</integer>
 		</dict>
 		<key>32191D19-A476-42F9-AB5C-85DAFC4AC58C</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>90</integer>
 			<key>ypos</key>
-			<integer>670</integer>
+			<integer>960</integer>
+		</dict>
+		<key>3815FE07-095F-4DE0-8C03-381CECC44FDD</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>xpos</key>
+			<integer>630</integer>
+			<key>ypos</key>
+			<integer>30</integer>
 		</dict>
 		<key>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>450</integer>
+			<integer>650</integer>
 		</dict>
 		<key>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
 			<key>xpos</key>
-			<integer>500</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>270</integer>
+			<integer>390</integer>
 		</dict>
 		<key>51639D3C-CF18-491E-846B-4C6771C1CFA5</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>xpos</key>
-			<integer>160</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>890</integer>
-		</dict>
-		<key>521BAB9A-AD76-4EFF-88C0-CE3A9C7443DE</key>
-		<dict>
-			<key>xpos</key>
-			<integer>890</integer>
-			<key>ypos</key>
-			<integer>570</integer>
+			<integer>960</integer>
 		</dict>
 		<key>570D9B3F-6F65-4691-8316-4FA72F721DDF</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>xpos</key>
-			<integer>680</integer>
+			<integer>760</integer>
 			<key>ypos</key>
-			<integer>930</integer>
+			<integer>960</integer>
 		</dict>
 		<key>59067D09-CAB1-479C-91EB-B41247C95E4E</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>note</key>
-			<string>Put into sheets view (cmd-2) BUT OSX needs alfred accesibility access</string>
+			<string>Switch to configured view BUT OSX needs alfred accesibility access</string>
 			<key>xpos</key>
-			<integer>680</integer>
+			<integer>820</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>650</integer>
 		</dict>
 		<key>5E5DAD91-5B27-49C8-A06E-91755374AAFF</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>xpos</key>
 			<integer>90</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>30</integer>
 		</dict>
 		<key>69DDE1AD-4895-406B-888A-A97187FD7D97</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>note</key>
 			<string>Work aroud racecondition in variable to python</string>
 			<key>xpos</key>
-			<integer>320</integer>
+			<integer>390</integer>
 			<key>ypos</key>
-			<integer>920</integer>
+			<integer>990</integer>
 		</dict>
-		<key>728DEB07-94D7-4C29-A6C9-F535A165AF9C</key>
+		<key>706835D1-B6A5-4C13-BB95-B0345C03AF2B</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>xpos</key>
-			<integer>960</integer>
+			<integer>90</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>270</integer>
 		</dict>
 		<key>73DEDE47-4567-41B2-8451-CD99D7C4A688</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>note</key>
 			<string>var:search_in != ""</string>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>660</integer>
 			<key>ypos</key>
-			<integer>960</integer>
+			<integer>990</integer>
 		</dict>
 		<key>79767E79-7CDE-4F19-9743-378A6071DA2C</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
 			<key>xpos</key>
 			<integer>290</integer>
 			<key>ypos</key>
-			<integer>270</integer>
+			<integer>390</integer>
 		</dict>
 		<key>7D4D1AE2-9B65-4AAE-A2A1-E5BED93E012E</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
 			<integer>90</integer>
 			<key>ypos</key>
-			<integer>400</integer>
+			<integer>520</integer>
 		</dict>
 		<key>93302667-ABA4-40C9-BB0B-B788FD818178</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
 			<key>xpos</key>
 			<integer>90</integer>
 			<key>ypos</key>
-			<integer>270</integer>
+			<integer>390</integer>
 		</dict>
 		<key>A59F421D-B415-4617-BF35-68E721C05B26</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>xpos</key>
 			<integer>290</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>30</integer>
 		</dict>
-		<key>DABDC35B-CA56-49D7-9680-349DA1245F3A</key>
+		<key>AF03267C-4E8A-4774-BE9F-B9526C2A1863</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>290</integer>
 			<key>ypos</key>
-			<integer>450</integer>
+			<integer>270</integer>
+		</dict>
+		<key>B863CF57-7996-4E7A-943C-AA825002824E</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>750</integer>
+			<key>ypos</key>
+			<integer>680</integer>
+		</dict>
+		<key>D25B7FD6-0BB6-41C2-A093-C5DDF80A5341</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>xpos</key>
+			<integer>460</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>EF6BADBE-B2C7-4FDC-937B-A6BD2DE8CB7F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>get configured view setting</string>
+			<key>xpos</key>
+			<integer>610</integer>
+			<key>ypos</key>
+			<integer>650</integer>
 		</dict>
 		<key>F384B949-9A4E-45AF-9E6E-69374567C35F</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
 			<integer>90</integer>
 			<key>ypos</key>
-			<integer>670</integer>
+			<integer>790</integer>
+		</dict>
+		<key>FB4DF08D-791C-4835-8DD2-737A778E5D3F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>xpos</key>
+			<integer>90</integer>
+			<key>ypos</key>
+			<integer>150</integer>
 		</dict>
 		<key>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>note</key>
 			<string>var:search_in == ""</string>
 			<key>xpos</key>
-			<integer>330</integer>
+			<integer>300</integer>
 			<key>ypos</key>
-			<integer>560</integer>
+			<integer>680</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
 	<dict>
 		<key>SemVer</key>
-		<string>.9.0</string>
+		<string>.9.1</string>
 	</dict>
 	<key>version</key>
-	<string>.9.0</string>
+	<string>.9.1</string>
 	<key>webaddress</key>
 	<string>github.com/robwalton/alfred-ulysses-workflow</string>
 </dict>
