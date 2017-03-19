@@ -24,8 +24,8 @@ Use the keyword:
 
 ## Configure view to open
 
-- u:setsheetview      Set the view for opening sheets with (defaults to 'Editor Only')
-- u:setgroupview      Set the view for opening groups with (defaults to 'Sheets')
+- **u:setsheetview**      Set the view for opening sheets with (defaults to 'Editor Only')
+- **u:setgroupview**      Set the view for opening groups with (defaults to 'Sheets')
 
 ## Versions
 
