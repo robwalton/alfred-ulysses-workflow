@@ -99,11 +99,21 @@ def main(wf):
         )
 
         if node_is_group:
-            item.add_modifier(
-                'cmd',
-                subtitle='     Go into: ' + '/'.join(pathlist) + '/' + node.name,
-                arg=alfredworkflow('', 'group', search_in=node.dirpath),
-            )
+            contains_another_group = len(node.child_groups) > 0
+
+            if contains_another_group:
+                item.add_modifier(
+                    'cmd',
+                    subtitle='     Go into: ' + '/'.join(pathlist) + '/' + node.name,
+                    arg=alfredworkflow('', 'group', search_in=node.dirpath),
+                )
+            else:
+                item.add_modifier(
+                    'cmd',
+                    subtitle='     No more groups in: ' + '/'.join(pathlist) + '/' + node.name,
+                    valid = False
+                    #arg=alfredworkflow('', 'group', search_in=node.dirpath),
+                )
 
     wf.send_feedback()
 
