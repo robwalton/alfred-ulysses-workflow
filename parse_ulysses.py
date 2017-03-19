@@ -6,7 +6,7 @@ import plistlib
 # GROUP = "com.soulmen.ulysses3.group"
 
 ULYSSES3_LIB = join(os.environ['HOME'],'Library', 'Mobile Documents',
-                            'X5AZV975AG~com~soulmen~ulysses3','Documents', 'Library')
+                    'X5AZV975AG~com~soulmen~ulysses3','Documents', 'Library')
 GROUPS_ROOT = join(ULYSSES3_LIB, 'Groups-ulgroup')
 UNFILED_ROOT = join(ULYSSES3_LIB, 'Unfiled-ulgroup')
 
@@ -95,14 +95,3 @@ def find_group_by_path(root_group, dirpath):
         if group.dirpath == dirpath:
             return group
     #raise Exception('Group not found with dirpath == ' + dirpath)
-
-
-def main():
-    groupa = create_tree('/Users/walton/Library/Mobile Documents/X5AZV975AG~com~soulmen~ulysses3/Documents/Library/Groups-ulgroup/b370d4576b4f419ea9a7076d2a46d841-ulgroup', None)
-    groups = create_tree(GROUPS_ROOT, None)
-    unfiled = create_tree(UNFILED_ROOT, None)
-    print groups
-    print walk(groupa)
-
-if __name__ == '__main__':
-    main()
