@@ -36,7 +36,7 @@ Use the keyword:
 - Added feature to select view for opening items with and commands to confure
 - Behind the scenes the workflow now uses (not enough of) deanishe's https://github.com/deanishe/alfred-workflow
 - Help now opens in Safari
-- 'ug' command no longer drills into empty groups   
+- 'ug' command no longer lets user drill into empty groups   
 
 
 ## To contribute
