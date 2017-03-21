@@ -758,7 +758,10 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on run argv	try		#activate application "Ulysses"		set viewToOpen to item 1 of argv		#delay .2		tell application "System Events" to tell process "Ulysses"			tell menu item viewToOpen of menu "View" of menu bar item "View" of menu bar 1				if value of attribute "AXMenuItemMarkChar" is not "✓" then click			end tell		end tell	on error errStr number errorNumber		if the errorNumber is equal to -1719 then			set theAlertText to "Cannot change the View setting in Ulysses."			set theAlertMessage to errStr &amp; "
+				<string>on run argv
+	repeat until application "Ulysses" is running
+		delay .5
+	end repeat	try		#activate application "Ulysses"		set viewToOpen to item 1 of argv		#delay .2		tell application "System Events" to tell process "Ulysses"			tell menu item viewToOpen of menu "View" of menu bar item "View" of menu bar 1				if value of attribute "AXMenuItemMarkChar" is not "✓" then click			end tell		end tell	on error errStr number errorNumber		if the errorNumber is equal to -1719 then			set theAlertText to "Cannot change the View setting in Ulysses."			set theAlertMessage to errStr &amp; "
 			
 Allow Alfred access in the Accessibility section of the Privacy tab of your Mac's Security &amp; Privacy System preferences; or use u:setsheetview and u:setgroupview to se both to Default."						display alert theAlertText message theAlertMessage as critical buttons {"Cancel", "Open Preferences"} default button "Open Preferences" cancel button "Cancel"			--&gt; Result: {button returned:"Open Preferences"}						tell application "System Preferences"				activate				set current pane to pane "com.apple.preference.security"			end tell		else			-- An unknown error occurred. Resignal, so the caller			-- can handle it, or AppleScript can display the number.			error errStr number errorNumber		end if	end tryend run</string>
 				<key>scriptargtype</key>
@@ -896,19 +899,13 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
+				<key>triggerid</key>
 				<string>SingleLevelSearch</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>570D9B3F-6F65-4691-8316-4FA72F721DDF</string>
+			<string>51639D3C-CF18-491E-846B-4C6771C1CFA5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -977,13 +974,19 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
+				<key>externaltriggerid</key>
 				<string>SingleLevelSearch</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>51639D3C-CF18-491E-846B-4C6771C1CFA5</string>
+			<string>570D9B3F-6F65-4691-8316-4FA72F721DDF</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
