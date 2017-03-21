@@ -1,9 +1,9 @@
 # Alfred Ulysses Workflow
 
-[Alfred 2 workflow](https://www.alfredapp.com/workflows/) to search and create tasks in [Ulysses](https://ulyssesapp.com).
+[Alfred 3 workflow](https://www.alfredapp.com/workflows/) to search and create tasks in [Ulysses](https://ulyssesapp.com).
 
 ## Install
-To install, download a released Ulysses.alfredworkflow and double-click to open in Alfred 2. Alternatively, download what should be the most recent version hosted on [Packal](http://www.packal.org/workflow/ulysses). There is a [discussion thread on the Alfred forum](http://www.alfredforum.com/topic/9662-ulysses-workflow/).
+To install, download a released Ulysses.alfredworkflow and double-click to open in Alfred 3. Alternatively, download what should be the most recent version hosted on [Packal](http://www.packal.org/workflow/ulysses). There is a [discussion thread on the Alfred forum](http://www.alfredforum.com/topic/9662-ulysses-workflow/).
 
 ## Get help
 Use the keyword:
