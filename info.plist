@@ -1310,10 +1310,10 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 	<key>variables</key>
 	<dict>
 		<key>SemVer</key>
-		<string>.9.1</string>
+		<string>.9.2</string>
 	</dict>
 	<key>version</key>
-	<string>.9.1</string>
+	<string>.9.2</string>
 	<key>webaddress</key>
 	<string>github.com/robwalton/alfred-ulysses-workflow</string>
 </dict>
