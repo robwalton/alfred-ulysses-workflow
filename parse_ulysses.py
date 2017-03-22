@@ -15,11 +15,12 @@ UNFILED_ROOT = join(ULYSSES3_LIB, 'Unfiled-ulgroup')
 MDFIND_SHEET_QUERY = '((** = "%s*"cdw) && (kMDItemKind = "Ulysses Sheet*"cdwt))'
 MDFIND_GROUP_QUERY = '((** = "%s*"cdw) && (kMDItemKind = "Ulysses Group*"cdwt))'
 
-class Node:
+class Node:  # consider abstract
 
     def __init__(self, dirpath, parent_group):
         self.dirpath = dirpath
         self.parent_group = parent_group
+        self.title = None
 
     def get_ancestors(self):
         ancestors = []
@@ -37,22 +38,31 @@ class Node:
 
 class Group(Node):
 
+    is_group = True
+    if_sheet = False
+
     def __init__(self, dirpath, parent_group):
         Node.__init__(self, dirpath, parent_group)
         self.child_groups = []
         self.child_sheets = []
         self.openable_file = join(self.dirpath, 'Info.ulgroup')
         self.name = plistlib.readPlist(join(self.dirpath, 'Info.ulgroup'))['displayName']
+        #self.name = self.name.decode('utf-8')
+        self.title = self.name
 
 
 class Sheet(Node):
+
+    is_group = False
+    is_sheet = True
 
     def __init__(self, dirpath, parent_group):
         Node.__init__(self, dirpath, parent_group)
         self.dirpath = dirpath
         self.openable_file = dirpath
         with open(join(self.dirpath, 'Text.txt'), 'r') as f:
-            self.first_line = f.readline().strip()
+            self.first_line = f.readline().decode('utf-8').strip()
+        self.title = self.first_line
 
 
 def filter_nodes_by_openable_file(nodes, openable_file_list):

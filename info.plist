@@ -688,7 +688,7 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
-				<true/>
+				<false/>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -706,7 +706,7 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "{'kind':'sheet'}"
+				<string>/usr/bin/python ulysses_items.py "$1" --kind=sheet
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -750,7 +750,7 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "{'kind':'all', 'content_query':'$1'}"</string>
+				<string>/usr/bin/python ulysses_items.py "$1" --kind=all --search-content</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -918,7 +918,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
-				<true/>
+				<false/>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -936,7 +936,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "{'kind':'all'}"</string>
+				<string>/usr/bin/python ulysses_items.py "$1" --kind=all --search-ulysses-path</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -980,7 +980,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
-				<true/>
+				<false/>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -998,7 +998,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "{'kind':'group'}"
+				<string>/usr/bin/python ulysses_items.py "$1" --kind=group
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -1059,7 +1059,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "{'kind':'group', 'only_in_path':'$search_in'}"
+				<string>/usr/bin/python ulysses_items.py --kind=group --limit-scope-to-dir="$search_in"
 
 </string>
 				<key>scriptargtype</key>

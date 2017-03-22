@@ -42,6 +42,7 @@ Use the **Open in Ulysses** file action to open text-like files in Ulysses
 
 **0.9.3**
 - Added `uf` command to find groups and sheets based on their content (not just their first line)
+- `u` and `ug` now fuzzy search Ulysses' path to groups and sheets (not just their name or first line)
 - Added an Alfred file action to open text-like files in Ulysses
 
 **0.9.2**
