@@ -40,21 +40,24 @@ Use the **Open in Ulysses** file action to open text-like files in Ulysses
 
 ## Versions
 
-**0.9**
-- Initial public release
+**0.9.3**
+- Added 'uf' command to find groups and sheets based on their content (not just their first line)
+- Added an Alfred file action to open text-like files in Ulysses
+
+**0.9.2**
+- Fix race condition where toggling view state fails if Ulysses is launching
 
 **0.9.1**
 - Added feature to select view for opening items with and commands to configure
 - Behind the scenes the workflow now uses (not enough of) deanishe's https://github.com/deanishe/alfred-workflow
 - Help now opens in Safari
-- 'ug' command no longer lets user drill into empty groups   
+- 'ug' command no longer lets user drill into empty groups
 
-**0.9.2**
-- Fix race condition where toggling view state fails if Ulysses is launching
+**0.9**
+- Initial public release
 
-**0.9.3**
-- Added 'uf' command to find groups and sheets based on their content (not just their first line)
-- Added an Alfred file action to open text-like files in Ulysses
+
+
 
 ## To contribute
 To contribute to the workflow please fork on github: https://github.com/robwalton/alfred-ulysses-workflow
