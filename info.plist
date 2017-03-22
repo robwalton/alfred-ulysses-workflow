@@ -936,7 +936,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py {'kind':'all'}"</string>
+				<string>/usr/bin/python ulysses_items.py "{'kind':'all'}"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
