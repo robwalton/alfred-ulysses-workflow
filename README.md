@@ -13,6 +13,7 @@ Use the keyword:
 ## Open group or sheet
 Use the keywords:
 
+- **uf** -- Find a group or sheet based on internal content
 - **u** -- Open group or sheet (cmd-return to drill down)
 - **ug** -- Open group (cmd-return to drill down)
 - **us** -- Open sheet
@@ -27,6 +28,16 @@ Use the keyword:
 - **u:setsheetview** -- Set the view for opening sheets with (defaults to 'Editor Only')
 - **u:setgroupview** -- Set the view for opening groups with (defaults to 'Sheets')
 
+## Alfred file action
+
+Use the **Open in Ulysses** file action to open text-like files in Ulysses
+
+## Thanks
+- [deanishe](https://www.alfredforum.com/profile/5235-deanishe/) for the awesome [Python workflow library](http://www.deanishe.net/alfred-workflow/index.html)
+- [dunkaroo](https://www.alfredforum.com/profile/11116-dunkaroo/) for searching and file action help
+- [dfay](https://www.alfredforum.com/profile/3468-dfay/) for file creation ideas
+- [katie](https://www.alfredforum.com/profile/5999-katie/) for thoughts on how find command should work
+
 ## Versions
 
 **0.9**
@@ -40,6 +51,10 @@ Use the keyword:
 
 **0.9.2**
 - Fix race condition where toggling view state fails if Ulysses is launching
+
+**0.9.3**
+- Added 'uf' command to find groups and sheets based on their content (not just their first line)
+- Added an Alfred file action to open text-like files in Ulysses
 
 ## To contribute
 To contribute to the workflow please fork on github: https://github.com/robwalton/alfred-ulysses-workflow

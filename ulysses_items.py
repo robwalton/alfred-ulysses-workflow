@@ -11,9 +11,16 @@ import parse_ulysses
 
 Returns a list of group and/or sheet items to Alfred. Call with:
 
-    $ ulysses_items.py group|sheet|all [only_in_path]
+    $ ulysses_items.py argdict
 
-If specified ,only_in_path will limit the search scope.
+where argdict must contain:
+
+    kind = 'group'|'sheet'|'all'
+
+and may contain any of:
+
+    only_in_path = 'path/to/root'                 # will limit the search scope
+    content_query = 'some text to find in file'   # used by mdfind
 
 """
 
@@ -25,8 +32,8 @@ ICON_UPDATE = 'update-available.png'
 logger = None
 
 
-def alfredworkflow(arg, node_type, search_in=''):
-    return '{"alfredworkflow" :{"arg": "%s", "variables": {"search_in": "%s", "node_type": "%s"}}}' % (arg, search_in, node_type)
+def alfredworkflow(arg, node_type, search_in='', content_query=''):
+    return '{"alfredworkflow" :{"arg": "%s", "variables": {"search_in": "%s", "node_type": "%s", "content_query": "%s"}}}' % (arg, search_in, node_type, content_query)
 
 
 def main(wf):
@@ -40,16 +47,17 @@ def main(wf):
                     icon=ICON_UPDATE)
 
 
-    # parse kind argument
-    kind = wf.args[0].strip()
-    assert kind in ('group', 'sheet', 'all')
+    # parse single argdict argument
+    argdict = eval(wf.args[0].strip())
+    kind = argdict['kind']  # required
+    only_in_path = argdict.get('only_in_path')
+    content_query = argdict.get('content_query')
 
-    # parse only_in_path argument
-    if len(wf.args) > 1:
-        only_in_path = wf.args[1]
+    assert kind in ('group', 'sheet', 'all')
+    if only_in_path:
         assert os.path.exists(only_in_path), "Path does not exist: '%s'" % only_in_path
-    else:
-        only_in_path = None
+    if content_query:
+        content_query = content_query.strip()
 
     # get all ulysses groups & sheets
     groups_tree = parse_ulysses.create_tree(parse_ulysses.GROUPS_ROOT, None)
@@ -61,12 +69,19 @@ def main(wf):
     else:
         groups, sheets = parse_ulysses.walk(groups_tree)
 
+
+    # filter if applicable
+    if content_query:
+        logger.info('>>> Filtering on "%s"' % content_query)
+        groups = parse_ulysses.filter_groups(groups, content_query)
+        sheets = parse_ulysses.filter_sheets(sheets, content_query)
+
     # include only desired kinds of nodes
     nodes = []
-    if kind in ('sheet', 'all'):
-        nodes.extend(sheets)
     if kind in ('group', 'all'):
         nodes.extend(groups)
+    if kind in ('sheet', 'all'):
+        nodes.extend(sheets)
 
     # add nodes to script filter results
     for node in nodes:
@@ -90,7 +105,7 @@ def main(wf):
         item = wf.add_item(
             title,
             subtitle='     ' + '/'.join(pathlist),
-            arg=alfredworkflow(node.openable_file, node_type),
+            arg=alfredworkflow(node.openable_file, node_type, content_query=content_query),
             autocomplete=node.name if node_is_group else node.first_line,
             valid=True,
             uid=node.openable_file,
@@ -105,14 +120,13 @@ def main(wf):
                 item.add_modifier(
                     'cmd',
                     subtitle='     Go into: ' + '/'.join(pathlist) + '/' + node.name,
-                    arg=alfredworkflow('', 'group', search_in=node.dirpath),
+                    arg=alfredworkflow('', 'group', search_in=node.dirpath, content_query=content_query),
                 )
             else:
                 item.add_modifier(
                     'cmd',
                     subtitle='     No more groups in: ' + '/'.join(pathlist) + '/' + node.name,
                     valid = False
-                    #arg=alfredworkflow('', 'group', search_in=node.dirpath),
                 )
 
     wf.send_feedback()

@@ -1,5 +1,6 @@
 import os
 from os.path import join
+import subprocess
 import plistlib
 
 # SHEET = "com.soulmen.ulysses3.sheet"
@@ -10,6 +11,9 @@ ULYSSES3_LIB = join(os.environ['HOME'],'Library', 'Mobile Documents',
 GROUPS_ROOT = join(ULYSSES3_LIB, 'Groups-ulgroup')
 UNFILED_ROOT = join(ULYSSES3_LIB, 'Unfiled-ulgroup')
 
+
+MDFIND_SHEET_QUERY = '((** = "%s*"cdw) && (kMDItemKind = "Ulysses Sheet*"cdwt))'
+MDFIND_GROUP_QUERY = '((** = "%s*"cdw) && (kMDItemKind = "Ulysses Group*"cdwt))'
 
 class Node:
 
@@ -49,6 +53,23 @@ class Sheet(Node):
         self.openable_file = dirpath
         with open(join(self.dirpath, 'Text.txt'), 'r') as f:
             self.first_line = f.readline().strip()
+
+
+def filter_nodes_by_openable_file(nodes, openable_file_list):
+    return [node for node in nodes if node.openable_file in openable_file_list]
+
+
+def filter_groups(groups, query):
+    openable_files = subprocess.check_output(
+        ['mdfind', MDFIND_GROUP_QUERY % query]).split('\n')
+    return filter_nodes_by_openable_file(groups, openable_files)
+
+
+def filter_sheets(sheets, query):
+    openable_files = subprocess.check_output(
+        ['mdfind', MDFIND_SHEET_QUERY % query]).split('\n')
+    return filter_nodes_by_openable_file(sheets, openable_files)
+
 
 
 def create_tree(rootgroupdir, parent_group):

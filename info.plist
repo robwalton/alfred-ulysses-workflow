@@ -78,6 +78,29 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3D0C9404-A2A6-40C3-9353-9353527F6841</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</key>
 		<array>
 			<dict>
@@ -117,11 +140,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>59067D09-CAB1-479C-91EB-B41247C95E4E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5E6EB903-2FEB-4EA4-871D-830A727732B6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5E5DAD91-5B27-49C8-A06E-91755374AAFF</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>A59F421D-B415-4617-BF35-68E721C05B26</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5E6EB903-2FEB-4EA4-871D-830A727732B6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E11E96ED-7F74-459F-8ED7-21634AC1FE78</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -195,6 +244,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>803C351C-B48D-472C-BDDE-705FD0FBF3A2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>27659738-CCEF-4E9A-998D-D5DE6939DD26</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>93302667-ABA4-40C9-BB0B-B788FD818178</key>
 		<array>
 			<dict>
@@ -208,24 +270,13 @@
 				<false/>
 			</dict>
 		</array>
+		<key>93D59A2F-DD3D-4B6B-94FE-5EB90D514859</key>
+		<array/>
 		<key>A59F421D-B415-4617-BF35-68E721C05B26</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>D25B7FD6-0BB6-41C2-A093-C5DDF80A5341</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>B863CF57-7996-4E7A-943C-AA825002824E</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>59067D09-CAB1-479C-91EB-B41247C95E4E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -247,11 +298,24 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E11E96ED-7F74-459F-8ED7-21634AC1FE78</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93D59A2F-DD3D-4B6B-94FE-5EB90D514859</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>EF6BADBE-B2C7-4FDC-937B-A6BD2DE8CB7F</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B863CF57-7996-4E7A-943C-AA825002824E</string>
+				<string>59067D09-CAB1-479C-91EB-B41247C95E4E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -323,29 +387,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>u:help</string>
+				<key>subtext</key>
+				<string>Show commands (u:help)</string>
+				<key>text</key>
+				<string>Help</string>
+				<key>withspace</key>
 				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>import sys, os
-workflow_version = os.environ['SemVer']
-sys.stdout.write(workflow_version)
-#from subprocess import check_output
-#readme = check_output('/usr/libexec/PlistBuddy -c "Print readme" info.plist', shell=True)</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>3</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>A59F421D-B415-4617-BF35-68E721C05B26</string>
+			<string>5E5DAD91-5B27-49C8-A06E-91755374AAFF</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -371,27 +429,6 @@ sys.stdout.write(workflow_version)
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>u:help</string>
-				<key>subtext</key>
-				<string>Show commands (u:help)</string>
-				<key>text</key>
-				<string>Help</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>5E5DAD91-5B27-49C8-A06E-91755374AAFF</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -407,6 +444,33 @@ sys.stdout.write(workflow_version)
 			<string>3815FE07-095F-4DE0-8C03-381CECC44FDD</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys, os
+workflow_version = os.environ['SemVer']
+sys.stdout.write(workflow_version)
+#from subprocess import check_output
+#readme = check_output('/usr/libexec/PlistBuddy -c "Print readme" info.plist', shell=True)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A59F421D-B415-4617-BF35-68E721C05B26</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -481,32 +545,6 @@ ulysses_view.set_view_setting("group", view_to_set)</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>import sys
-import ulysses_view
-view_to_set = sys.argv[1]
-ulysses_view.set_view_setting("sheet", view_to_set)</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>3</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>AF03267C-4E8A-4774-BE9F-B9526C2A1863</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>argumenttype</key>
@@ -551,17 +589,26 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
+				<key>concurrently</key>
 				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+import ulysses_view
+view_to_set = sys.argv[1]
+ulysses_view.set_view_setting("sheet", view_to_set)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>31247F5F-C0FC-46BB-AEEB-33B53A0EA869</string>
+			<string>AF03267C-4E8A-4774-BE9F-B9526C2A1863</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -579,6 +626,23 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
 			<string>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Ulysses.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>79767E79-7CDE-4F19-9743-378A6071DA2C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -606,19 +670,19 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Ulysses.app</string>
-				</array>
-				<key>toggle</key>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>79767E79-7CDE-4F19-9743-378A6071DA2C</string>
+			<string>31247F5F-C0FC-46BB-AEEB-33B53A0EA869</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -642,7 +706,7 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "sheet"
+				<string>/usr/bin/python ulysses_items.py "{'kind':'sheet'}"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -663,6 +727,94 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 			<string>7D4D1AE2-9B65-4AAE-A2A1-E5BED93E012E</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>uf</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python ulysses_items.py "{'kind':'all', 'content_query':'$1'}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Find Ulysses Item</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3D0C9404-A2A6-40C3-9353-9353527F6841</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+	repeat until application "Ulysses" is running
+		delay .5
+	end repeat	try		#activate application "Ulysses"		set viewToOpen to item 1 of argv		#delay .2		tell application "System Events" to tell process "Ulysses"			tell menu item viewToOpen of menu "View" of menu bar item "View" of menu bar 1				if value of attribute "AXMenuItemMarkChar" is not "✓" then click			end tell		end tell	on error errStr number errorNumber		if the errorNumber is equal to -1719 then			set theAlertText to "Cannot change the View setting in Ulysses."			set theAlertMessage to errStr &amp; "
+			
+Allow Alfred access in the Accessibility section of the Privacy tab of your Mac's Security &amp; Privacy System preferences; or use u:setsheetview and u:setgroupview to se both to Default."						display alert theAlertText message theAlertMessage as critical buttons {"Cancel", "Open Preferences"} default button "Open Preferences" cancel button "Cancel"			--&gt; Result: {button returned:"Open Preferences"}						tell application "System Preferences"				activate				set current pane to pane "com.apple.preference.security"			end tell		else			-- An unknown error occurred. Resignal, so the caller			-- can handle it, or AppleScript can display the number.			error errStr number errorNumber		end if	end tryend run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>59067D09-CAB1-479C-91EB-B41247C95E4E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>keychar</key>
+				<string>f</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>1048576</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>E11E96ED-7F74-459F-8ED7-21634AC1FE78</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -710,88 +862,36 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
+				<key>autopaste</key>
 				<true/>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>keyword</key>
-				<string>u</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "all"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Open Ulysses Item</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
+				<key>clipboardtext</key>
+				<string>{var:content_query}</string>
+				<key>transient</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>00659145-0CEA-422B-A253-D70928DC6CC7</string>
+			<string>93D59A2F-DD3D-4B6B-94FE-5EB90D514859</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>on run argv
-	repeat until application "Ulysses" is running
-		delay .5
-	end repeat	try		#activate application "Ulysses"		set viewToOpen to item 1 of argv		#delay .2		tell application "System Events" to tell process "Ulysses"			tell menu item viewToOpen of menu "View" of menu bar item "View" of menu bar 1				if value of attribute "AXMenuItemMarkChar" is not "✓" then click			end tell		end tell	on error errStr number errorNumber		if the errorNumber is equal to -1719 then			set theAlertText to "Cannot change the View setting in Ulysses."			set theAlertMessage to errStr &amp; "
-			
-Allow Alfred access in the Accessibility section of the Privacy tab of your Mac's Security &amp; Privacy System preferences; or use u:setsheetview and u:setgroupview to se both to Default."						display alert theAlertText message theAlertMessage as critical buttons {"Cancel", "Open Preferences"} default button "Open Preferences" cancel button "Cancel"			--&gt; Result: {button returned:"Open Preferences"}						tell application "System Preferences"				activate				set current pane to pane "com.apple.preference.security"			end tell		else			-- An unknown error occurred. Resignal, so the caller			-- can handle it, or AppleScript can display the number.			error errStr number errorNumber		end if	end tryend run</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>59067D09-CAB1-479C-91EB-B41247C95E4E</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>'{query}', {allvars}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
+				<key>inputstring</key>
+				<string>{var:content_query}</string>
+				<key>matchcasesensitive</key>
 				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string></string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
+			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
-			<string>B863CF57-7996-4E7A-943C-AA825002824E</string>
+			<string>5E6EB903-2FEB-4EA4-871D-830A727732B6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -824,6 +924,68 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>keyword</key>
+				<string>u</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python ulysses_items.py {'kind':'all'}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Open Ulysses Item</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>00659145-0CEA-422B-A253-D70928DC6CC7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:search_in}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
 				<string>ug</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
@@ -836,7 +998,7 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "group"
+				<string>/usr/bin/python ulysses_items.py "{'kind':'group'}"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -866,25 +1028,6 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 				<key>matchcasesensitive</key>
 				<true/>
 				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>inputstring</key>
-				<string>{var:search_in}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
 				<integer>0</integer>
 				<key>matchstring</key>
 				<string></string>
@@ -893,19 +1036,6 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
 			<string>00BD6A29-202D-43EC-AA4A-938C4536971B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>SingleLevelSearch</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>51639D3C-CF18-491E-846B-4C6771C1CFA5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -929,7 +1059,7 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "group" "$search_in"
+				<string>/usr/bin/python ulysses_items.py "{'kind':'group', 'only_in_path':'$search_in'}"
 
 </string>
 				<key>scriptargtype</key>
@@ -974,6 +1104,32 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>triggerid</key>
+				<string>SingleLevelSearch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>51639D3C-CF18-491E-846B-4C6771C1CFA5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>.05</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>69DDE1AD-4895-406B-888A-A97187FD7D97</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>externaltriggerid</key>
 				<string>SingleLevelSearch</string>
 				<key>passinputasargument</key>
@@ -1012,13 +1168,36 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>seconds</key>
-				<string>.05</string>
+				<key>openwith</key>
+				<string>/Applications/Ulysses.app</string>
+				<key>sourcefile</key>
+				<string></string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
+			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>69DDE1AD-4895-406B-888A-A97187FD7D97</string>
+			<string>27659738-CCEF-4E9A-998D-D5DE6939DD26</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>com.apple.rtfd</string>
+					<string>public.plain-text</string>
+					<string>public.rtf</string>
+				</array>
+				<key>name</key>
+				<string>Open in Ulysses</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>803C351C-B48D-472C-BDDE-705FD0FBF3A2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1043,18 +1222,18 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>650</integer>
+			<integer>750</integer>
 		</dict>
 		<key>0081F279-3540-4D3D-B6EF-77D6BAC59961</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>470</integer>
+			<integer>420</integer>
 			<key>ypos</key>
-			<integer>960</integer>
+			<integer>1060</integer>
 		</dict>
 		<key>00BD6A29-202D-43EC-AA4A-938C4536971B</key>
 		<dict>
@@ -1063,9 +1242,9 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>note</key>
 			<string>var:search_in == ""</string>
 			<key>xpos</key>
-			<integer>660</integer>
+			<integer>620</integer>
 			<key>ypos</key>
-			<integer>900</integer>
+			<integer>1040</integer>
 		</dict>
 		<key>18104AA0-772A-4E62-BFE9-AB021444E7B2</key>
 		<dict>
@@ -1074,16 +1253,25 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>note</key>
 			<string>var:search_in != ""</string>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>250</integer>
 			<key>ypos</key>
-			<integer>820</integer>
+			<integer>840</integer>
+		</dict>
+		<key>27659738-CCEF-4E9A-998D-D5DE6939DD26</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>200</integer>
+			<key>ypos</key>
+			<integer>1240</integer>
 		</dict>
 		<key>2D4943A5-2135-4285-87CF-E842DBB1D7A9</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>240</integer>
 			<key>ypos</key>
 			<integer>150</integer>
 		</dict>
@@ -1094,7 +1282,7 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>note</key>
 			<string>Copy and paste {query} into 'Open' dialogue field</string>
 			<key>xpos</key>
-			<integer>630</integer>
+			<integer>580</integer>
 			<key>ypos</key>
 			<integer>390</integer>
 		</dict>
@@ -1103,34 +1291,43 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>960</integer>
+			<integer>1060</integer>
 		</dict>
 		<key>3815FE07-095F-4DE0-8C03-381CECC44FDD</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>630</integer>
+			<integer>580</integer>
 			<key>ypos</key>
 			<integer>30</integer>
+		</dict>
+		<key>3D0C9404-A2A6-40C3-9353-9353527F6841</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>630</integer>
 		</dict>
 		<key>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>530</integer>
 			<key>ypos</key>
-			<integer>650</integer>
+			<integer>690</integer>
 		</dict>
 		<key>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>410</integer>
 			<key>ypos</key>
 			<integer>390</integer>
 		</dict>
@@ -1139,18 +1336,18 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>190</integer>
 			<key>ypos</key>
-			<integer>960</integer>
+			<integer>1060</integer>
 		</dict>
 		<key>570D9B3F-6F65-4691-8316-4FA72F721DDF</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>760</integer>
+			<integer>720</integer>
 			<key>ypos</key>
-			<integer>960</integer>
+			<integer>1100</integer>
 		</dict>
 		<key>59067D09-CAB1-479C-91EB-B41247C95E4E</key>
 		<dict>
@@ -1159,18 +1356,29 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>note</key>
 			<string>Switch to configured view BUT OSX needs alfred accesibility access</string>
 			<key>xpos</key>
-			<integer>820</integer>
+			<integer>810</integer>
 			<key>ypos</key>
-			<integer>650</integer>
+			<integer>690</integer>
 		</dict>
 		<key>5E5DAD91-5B27-49C8-A06E-91755374AAFF</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>40</integer>
 			<key>ypos</key>
 			<integer>30</integer>
+		</dict>
+		<key>5E6EB903-2FEB-4EA4-871D-830A727732B6</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>var:content_query != ""</string>
+			<key>xpos</key>
+			<integer>960</integer>
+			<key>ypos</key>
+			<integer>720</integer>
 		</dict>
 		<key>69DDE1AD-4895-406B-888A-A97187FD7D97</key>
 		<dict>
@@ -1179,16 +1387,16 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>note</key>
 			<string>Work aroud racecondition in variable to python</string>
 			<key>xpos</key>
-			<integer>390</integer>
+			<integer>340</integer>
 			<key>ypos</key>
-			<integer>990</integer>
+			<integer>1090</integer>
 		</dict>
 		<key>706835D1-B6A5-4C13-BB95-B0345C03AF2B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>40</integer>
 			<key>ypos</key>
 			<integer>270</integer>
 		</dict>
@@ -1199,16 +1407,16 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>note</key>
 			<string>var:search_in != ""</string>
 			<key>xpos</key>
-			<integer>660</integer>
+			<integer>620</integer>
 			<key>ypos</key>
-			<integer>990</integer>
+			<integer>1130</integer>
 		</dict>
 		<key>79767E79-7CDE-4F19-9743-378A6071DA2C</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>240</integer>
 			<key>ypos</key>
 			<integer>390</integer>
 		</dict>
@@ -1217,25 +1425,45 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>520</integer>
+			<integer>510</integer>
+		</dict>
+		<key>803C351C-B48D-472C-BDDE-705FD0FBF3A2</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>Open a text file in Ulysses</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>1240</integer>
 		</dict>
 		<key>93302667-ABA4-40C9-BB0B-B788FD818178</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>40</integer>
 			<key>ypos</key>
 			<integer>390</integer>
+		</dict>
+		<key>93D59A2F-DD3D-4B6B-94FE-5EB90D514859</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>1170</integer>
+			<key>ypos</key>
+			<integer>690</integer>
 		</dict>
 		<key>A59F421D-B415-4617-BF35-68E721C05B26</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>240</integer>
 			<key>ypos</key>
 			<integer>30</integer>
 		</dict>
@@ -1244,27 +1472,27 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>240</integer>
 			<key>ypos</key>
 			<integer>270</integer>
-		</dict>
-		<key>B863CF57-7996-4E7A-943C-AA825002824E</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>8</integer>
-			<key>xpos</key>
-			<integer>750</integer>
-			<key>ypos</key>
-			<integer>680</integer>
 		</dict>
 		<key>D25B7FD6-0BB6-41C2-A093-C5DDF80A5341</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>410</integer>
 			<key>ypos</key>
 			<integer>30</integer>
+		</dict>
+		<key>E11E96ED-7F74-459F-8ED7-21634AC1FE78</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>1030</integer>
+			<key>ypos</key>
+			<integer>690</integer>
 		</dict>
 		<key>EF6BADBE-B2C7-4FDC-937B-A6BD2DE8CB7F</key>
 		<dict>
@@ -1273,25 +1501,25 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>note</key>
 			<string>get configured view setting</string>
 			<key>xpos</key>
-			<integer>610</integer>
+			<integer>670</integer>
 			<key>ypos</key>
-			<integer>650</integer>
+			<integer>690</integer>
 		</dict>
 		<key>F384B949-9A4E-45AF-9E6E-69374567C35F</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>790</integer>
+			<integer>870</integer>
 		</dict>
 		<key>FB4DF08D-791C-4835-8DD2-737A778E5D3F</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>40</integer>
 			<key>ypos</key>
 			<integer>150</integer>
 		</dict>
@@ -1302,18 +1530,18 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 			<key>note</key>
 			<string>var:search_in == ""</string>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>250</integer>
 			<key>ypos</key>
-			<integer>680</integer>
+			<integer>720</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
 	<dict>
 		<key>SemVer</key>
-		<string>.9.2</string>
+		<string>.9.3.dev</string>
 	</dict>
 	<key>version</key>
-	<string>.9.2</string>
+	<string>.9.3.dev</string>
 	<key>webaddress</key>
 	<string>github.com/robwalton/alfred-ulysses-workflow</string>
 </dict>
