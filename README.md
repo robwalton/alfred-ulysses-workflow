@@ -8,25 +8,25 @@ To install, download a released Ulysses.alfredworkflow and double-click to open 
 ## Get help
 Use the keyword:
 
-- **u:help** -- Show a brief summary of commands
+- `u:help` -- Show a brief summary of commands
 
 ## Open group or sheet
 Use the keywords:
 
-- **uf** -- Find a group or sheet based on internal content
-- **u** -- Open group or sheet (cmd-return to drill down)
-- **ug** -- Open group (cmd-return to drill down)
-- **us** -- Open sheet
+- `uf` -- Find a group or sheet based on internal content
+- `u` -- Open group or sheet (cmd-return to drill down)
+- `ug` -- Open group (cmd-return to drill down)
+- `us` -- Open sheet
 
 ## Pop open Ulysses Open dialogue
 
 Use the keyword:
-- **uo <arg>** -- Search for <arg> within Ulysses’ Open dialogue
+- `uo <arg>` -- Search for <arg> within Ulysses’ Open dialogue
 
 ## Configure view to open
 
-- **u:setsheetview** -- Set the view for opening sheets with (defaults to 'Editor Only')
-- **u:setgroupview** -- Set the view for opening groups with (defaults to 'Sheets')
+- `u:setsheetview` -- Set the view for opening sheets with (defaults to 'Editor Only')
+- `u:setgroupview` -- Set the view for opening groups with (defaults to 'Sheets')
 
 ## Alfred file action
 
@@ -41,7 +41,7 @@ Use the **Open in Ulysses** file action to open text-like files in Ulysses
 ## Versions
 
 **0.9.3**
-- Added 'uf' command to find groups and sheets based on their content (not just their first line)
+- Added `uf` command to find groups and sheets based on their content (not just their first line)
 - Added an Alfred file action to open text-like files in Ulysses
 
 **0.9.2**
@@ -51,7 +51,7 @@ Use the **Open in Ulysses** file action to open text-like files in Ulysses
 - Added feature to select view for opening items with and commands to configure
 - Behind the scenes the workflow now uses (not enough of) deanishe's https://github.com/deanishe/alfred-workflow
 - Help now opens in Safari
-- 'ug' command no longer lets user drill into empty groups
+- `ug` command no longer lets user drill into empty groups
 
 **0.9**
 - Initial public release
