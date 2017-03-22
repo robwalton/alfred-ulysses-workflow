@@ -1538,10 +1538,10 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 	<key>variables</key>
 	<dict>
 		<key>SemVer</key>
-		<string>.9.3.dev</string>
+		<string>.9.3-b</string>
 	</dict>
 	<key>version</key>
-	<string>.9.3.dev</string>
+	<string>.9.3-b</string>
 	<key>webaddress</key>
 	<string>github.com/robwalton/alfred-ulysses-workflow</string>
 </dict>
