@@ -10,17 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
+				<string>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -56,7 +46,20 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</string>
+				<string>7423C1EE-3346-4AE8-B866-ADBB331A7699</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>15113C65-1804-4AC9-B12F-2717621B4BAC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -82,7 +85,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</string>
+				<string>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -90,9 +93,25 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>3E09A0D5-0520-4C47-897C-A6A87E44D07C</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
+				<string>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F384B949-9A4E-45AF-9E6E-69374567C35F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -179,6 +198,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5F2D8B5F-784F-4039-B86E-6BD734C1DB6A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>69DDE1AD-4895-406B-888A-A97187FD7D97</key>
 		<array>
 			<dict>
@@ -218,6 +250,39 @@
 				<false/>
 			</dict>
 		</array>
+		<key>7423C1EE-3346-4AE8-B866-ADBB331A7699</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E9080C23-BC51-45C1-B1D6-005B5A514B1E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A4409E9E-E545-4988-A761-3688AF6D4522</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E09A0D5-0520-4C47-897C-A6A87E44D07C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>79767E79-7CDE-4F19-9743-378A6071DA2C</key>
 		<array>
 			<dict>
@@ -235,7 +300,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</string>
+				<string>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -285,6 +350,34 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C0D68508-99F8-45D7-AC74-FA95B56211D9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93D59A2F-DD3D-4B6B-94FE-5EB90D514859</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C1097316-7E5B-436C-97CD-3FF7C689E06F</key>
+		<array/>
+		<key>CBB8EF84-9668-4350-A4C2-DAC52CF0F12C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>15113C65-1804-4AC9-B12F-2717621B4BAC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>D25B7FD6-0BB6-41C2-A093-C5DDF80A5341</key>
 		<array>
 			<dict>
@@ -302,7 +395,20 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>93D59A2F-DD3D-4B6B-94FE-5EB90D514859</string>
+				<string>C0D68508-99F8-45D7-AC74-FA95B56211D9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E9080C23-BC51-45C1-B1D6-005B5A514B1E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1097316-7E5B-436C-97CD-3FF7C689E06F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -328,17 +434,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
+				<string>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -364,7 +460,30 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</string>
+				<string>7423C1EE-3346-4AE8-B866-ADBB331A7699</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -687,6 +806,128 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>openwith</key>
+				<string>/Applications/Ulysses.app</string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>27659738-CCEF-4E9A-998D-D5DE6939DD26</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>com.apple.rtfd</string>
+					<string>public.plain-text</string>
+					<string>public.rtf</string>
+				</array>
+				<key>name</key>
+				<string>Open in Ulysses</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>803C351C-B48D-472C-BDDE-705FD0FBF3A2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>net.daringfireball.markdown</string>
+					<string>public.plain-text</string>
+				</array>
+				<key>name</key>
+				<string>Import into Ulysses</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>CBB8EF84-9668-4350-A4C2-DAC52CF0F12C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+cat "$query"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>15113C65-1804-4AC9-B12F-2717621B4BAC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>un</string>
+				<key>subtext</key>
+				<string>Optionally enter text</string>
+				<key>text</key>
+				<string>New Sheet in Ulysses</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5F2D8B5F-784F-4039-B86E-6BD734C1DB6A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>create_new_sheet</key>
+					<string>true</string>
+					<key>new_sheet_text</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>argumenttype</key>
@@ -727,6 +968,107 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 			<string>7D4D1AE2-9B65-4AAE-A2A1-E5BED93E012E</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>ug</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python ulysses_items.py "$1" --kind=group
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Open Ulysses Group</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F384B949-9A4E-45AF-9E6E-69374567C35F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>ulysses://x-callback-url/new-sheet?group={var:ulysses_path}&amp;text={var:new_sheet_text}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>C1097316-7E5B-436C-97CD-3FF7C689E06F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:create_new_sheet}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>true</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>E9080C23-BC51-45C1-B1D6-005B5A514B1E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>*** About to open ***
+'{query}', {allvars}
+***</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>A4409E9E-E545-4988-A761-3688AF6D4522</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -880,6 +1222,46 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>config</key>
 			<dict>
 				<key>inputstring</key>
+				<string>{var:create_new_sheet}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>3E09A0D5-0520-4C47-897C-A6A87E44D07C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>7423C1EE-3346-4AE8-B866-ADBB331A7699</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>.2</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>C0D68508-99F8-45D7-AC74-FA95B56211D9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
 				<string>{var:content_query}</string>
 				<key>matchcasesensitive</key>
 				<true/>
@@ -958,6 +1340,14 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<integer>2</integer>
 		</dict>
 		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
 			<key>config</key>
 			<dict>
 				<key>inputstring</key>
@@ -975,50 +1365,6 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>keyword</key>
-				<string>ug</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "$1" --kind=group
-</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Open Ulysses Group</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>F384B949-9A4E-45AF-9E6E-69374567C35F</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1059,7 +1405,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py --kind=group --limit-scope-to-dir="$search_in"
+				<string>/usr/bin/python ulysses_items.py --kind=$kind_requested --limit-scope-to-dir="$search_in"
 
 </string>
 				<key>scriptargtype</key>
@@ -1165,42 +1511,6 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string>/Applications/Ulysses.app</string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>27659738-CCEF-4E9A-998D-D5DE6939DD26</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>com.apple.rtfd</string>
-					<string>public.plain-text</string>
-					<string>public.rtf</string>
-				</array>
-				<key>name</key>
-				<string>Open in Ulysses</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>803C351C-B48D-472C-BDDE-705FD0FBF3A2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>See packal.org/workflow/ulysses for full instructions
@@ -1224,7 +1534,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>750</integer>
+			<integer>1220</integer>
 		</dict>
 		<key>0081F279-3540-4D3D-B6EF-77D6BAC59961</key>
 		<dict>
@@ -1233,7 +1543,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>420</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1530</integer>
 		</dict>
 		<key>00BD6A29-202D-43EC-AA4A-938C4536971B</key>
 		<dict>
@@ -1244,7 +1554,16 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>620</integer>
 			<key>ypos</key>
-			<integer>1040</integer>
+			<integer>1510</integer>
+		</dict>
+		<key>15113C65-1804-4AC9-B12F-2717621B4BAC</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>200</integer>
+			<key>ypos</key>
+			<integer>630</integer>
 		</dict>
 		<key>18104AA0-772A-4E62-BFE9-AB021444E7B2</key>
 		<dict>
@@ -1253,18 +1572,18 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>note</key>
 			<string>var:search_in != ""</string>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>290</integer>
 			<key>ypos</key>
-			<integer>840</integer>
+			<integer>1310</integer>
 		</dict>
 		<key>27659738-CCEF-4E9A-998D-D5DE6939DD26</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>8</integer>
+			<integer>3</integer>
 			<key>xpos</key>
 			<integer>200</integer>
 			<key>ypos</key>
-			<integer>1240</integer>
+			<integer>490</integer>
 		</dict>
 		<key>2D4943A5-2135-4285-87CF-E842DBB1D7A9</key>
 		<dict>
@@ -1273,7 +1592,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>240</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>130</integer>
 		</dict>
 		<key>31247F5F-C0FC-46BB-AEEB-33B53A0EA869</key>
 		<dict>
@@ -1284,7 +1603,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>580</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>370</integer>
 		</dict>
 		<key>32191D19-A476-42F9-AB5C-85DAFC4AC58C</key>
 		<dict>
@@ -1293,7 +1612,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1530</integer>
 		</dict>
 		<key>3815FE07-095F-4DE0-8C03-381CECC44FDD</key>
 		<dict>
@@ -1302,7 +1621,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>580</integer>
 			<key>ypos</key>
-			<integer>30</integer>
+			<integer>10</integer>
 		</dict>
 		<key>3D0C9404-A2A6-40C3-9353-9353527F6841</key>
 		<dict>
@@ -1311,16 +1630,37 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>1100</integer>
+		</dict>
+		<key>3E09A0D5-0520-4C47-897C-A6A87E44D07C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>var:create_new_sheet != true</string>
+			<key>xpos</key>
+			<integer>470</integer>
+			<key>ypos</key>
+			<integer>1190</integer>
+		</dict>
+		<key>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</key>
+		<dict>
+			<key>note</key>
+			<string>new_sheet_text = {query}
+create_new_sheet = true</string>
+			<key>xpos</key>
+			<integer>390</integer>
+			<key>ypos</key>
+			<integer>800</integer>
 		</dict>
 		<key>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>530</integer>
+			<integer>540</integer>
 			<key>ypos</key>
-			<integer>690</integer>
+			<integer>1160</integer>
 		</dict>
 		<key>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</key>
 		<dict>
@@ -1329,7 +1669,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>370</integer>
 		</dict>
 		<key>51639D3C-CF18-491E-846B-4C6771C1CFA5</key>
 		<dict>
@@ -1338,7 +1678,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>190</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1530</integer>
 		</dict>
 		<key>570D9B3F-6F65-4691-8316-4FA72F721DDF</key>
 		<dict>
@@ -1347,7 +1687,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>720</integer>
 			<key>ypos</key>
-			<integer>1100</integer>
+			<integer>1570</integer>
 		</dict>
 		<key>59067D09-CAB1-479C-91EB-B41247C95E4E</key>
 		<dict>
@@ -1358,7 +1698,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>810</integer>
 			<key>ypos</key>
-			<integer>690</integer>
+			<integer>1160</integer>
 		</dict>
 		<key>5E5DAD91-5B27-49C8-A06E-91755374AAFF</key>
 		<dict>
@@ -1367,7 +1707,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>30</integer>
+			<integer>10</integer>
 		</dict>
 		<key>5E6EB903-2FEB-4EA4-871D-830A727732B6</key>
 		<dict>
@@ -1376,9 +1716,18 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>note</key>
 			<string>var:content_query != ""</string>
 			<key>xpos</key>
-			<integer>960</integer>
+			<integer>950</integer>
 			<key>ypos</key>
-			<integer>720</integer>
+			<integer>1190</integer>
+		</dict>
+		<key>5F2D8B5F-784F-4039-B86E-6BD734C1DB6A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>770</integer>
 		</dict>
 		<key>69DDE1AD-4895-406B-888A-A97187FD7D97</key>
 		<dict>
@@ -1389,7 +1738,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>340</integer>
 			<key>ypos</key>
-			<integer>1090</integer>
+			<integer>1560</integer>
 		</dict>
 		<key>706835D1-B6A5-4C13-BB95-B0345C03AF2B</key>
 		<dict>
@@ -1398,7 +1747,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>270</integer>
+			<integer>250</integer>
 		</dict>
 		<key>73DEDE47-4567-41B2-8451-CD99D7C4A688</key>
 		<dict>
@@ -1409,7 +1758,16 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>620</integer>
 			<key>ypos</key>
-			<integer>1130</integer>
+			<integer>1600</integer>
+		</dict>
+		<key>7423C1EE-3346-4AE8-B866-ADBB331A7699</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>1190</integer>
 		</dict>
 		<key>79767E79-7CDE-4F19-9743-378A6071DA2C</key>
 		<dict>
@@ -1418,27 +1776,27 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>240</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>370</integer>
 		</dict>
 		<key>7D4D1AE2-9B65-4AAE-A2A1-E5BED93E012E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>40</integer>
+			<integer>110</integer>
 			<key>ypos</key>
-			<integer>510</integer>
+			<integer>840</integer>
 		</dict>
 		<key>803C351C-B48D-472C-BDDE-705FD0FBF3A2</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>8</integer>
+			<integer>3</integer>
 			<key>note</key>
 			<string>Open a text file in Ulysses</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>1240</integer>
+			<integer>490</integer>
 		</dict>
 		<key>93302667-ABA4-40C9-BB0B-B788FD818178</key>
 		<dict>
@@ -1447,16 +1805,25 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>370</integer>
 		</dict>
 		<key>93D59A2F-DD3D-4B6B-94FE-5EB90D514859</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>1170</integer>
+			<integer>1210</integer>
 			<key>ypos</key>
-			<integer>690</integer>
+			<integer>1160</integer>
+		</dict>
+		<key>A4409E9E-E545-4988-A761-3688AF6D4522</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>1090</integer>
 		</dict>
 		<key>A59F421D-B415-4617-BF35-68E721C05B26</key>
 		<dict>
@@ -1465,7 +1832,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>240</integer>
 			<key>ypos</key>
-			<integer>30</integer>
+			<integer>10</integer>
 		</dict>
 		<key>AF03267C-4E8A-4774-BE9F-B9526C2A1863</key>
 		<dict>
@@ -1474,7 +1841,36 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>240</integer>
 			<key>ypos</key>
-			<integer>270</integer>
+			<integer>250</integer>
+		</dict>
+		<key>C0D68508-99F8-45D7-AC74-FA95B56211D9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>note</key>
+			<string>sleep .2 s</string>
+			<key>xpos</key>
+			<integer>1150</integer>
+			<key>ypos</key>
+			<integer>1190</integer>
+		</dict>
+		<key>C1097316-7E5B-436C-97CD-3FF7C689E06F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>690</integer>
+			<key>ypos</key>
+			<integer>990</integer>
+		</dict>
+		<key>CBB8EF84-9668-4350-A4C2-DAC52CF0F12C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>630</integer>
 		</dict>
 		<key>D25B7FD6-0BB6-41C2-A093-C5DDF80A5341</key>
 		<dict>
@@ -1483,16 +1879,27 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>30</integer>
+			<integer>10</integer>
 		</dict>
 		<key>E11E96ED-7F74-459F-8ED7-21634AC1FE78</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>1030</integer>
+			<integer>1020</integer>
 			<key>ypos</key>
-			<integer>690</integer>
+			<integer>1160</integer>
+		</dict>
+		<key>E9080C23-BC51-45C1-B1D6-005B5A514B1E</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>var:new_item_text == true</string>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>1010</integer>
 		</dict>
 		<key>EF6BADBE-B2C7-4FDC-937B-A6BD2DE8CB7F</key>
 		<dict>
@@ -1503,16 +1910,16 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>670</integer>
 			<key>ypos</key>
-			<integer>690</integer>
+			<integer>1160</integer>
 		</dict>
 		<key>F384B949-9A4E-45AF-9E6E-69374567C35F</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>8</integer>
+			<integer>6</integer>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>870</integer>
+			<integer>970</integer>
 		</dict>
 		<key>FB4DF08D-791C-4835-8DD2-737A778E5D3F</key>
 		<dict>
@@ -1521,18 +1928,27 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>130</integer>
 		</dict>
 		<key>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>8</integer>
+			<integer>6</integer>
 			<key>note</key>
 			<string>var:search_in == ""</string>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>290</integer>
 			<key>ypos</key>
-			<integer>720</integer>
+			<integer>1190</integer>
+		</dict>
+		<key>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>1250</integer>
 		</dict>
 	</dict>
 	<key>variables</key>

@@ -93,7 +93,7 @@ def main(wf):
     if args.kind in ('sheet', 'all'):
         nodes.extend(sheets)
 
-    # apply fuzzy matching
+    # filter nodes using fuzzy matching from {query}
     if args.query and not args.search_content:
         if args.search_ulysses_path:
             key_func = expanded_node_path
@@ -127,7 +127,7 @@ def main(wf):
         else:
             assert False
 
-        content_query = args.query if args.search_content else None
+        content_query = args.query if args.search_content else ''
         item = wf.add_item(
             title,
             subtitle='     ' + '/'.join(pathlist),

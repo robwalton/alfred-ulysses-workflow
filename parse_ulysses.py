@@ -9,13 +9,16 @@ import plistlib
 ULYSSES3_LIB = join(os.environ['HOME'],'Library', 'Mobile Documents',
                     'X5AZV975AG~com~soulmen~ulysses3','Documents', 'Library')
 GROUPS_ROOT = join(ULYSSES3_LIB, 'Groups-ulgroup')
-UNFILED_ROOT = join(ULYSSES3_LIB, 'Unfiled-ulgroup')
+UNFILED_ROOT = join(ULYSSES3_LIB, 'Unfiled-ulgroup')  # a.k.a. Inbox
 
 
 MDFIND_SHEET_QUERY = '((** = "%s*"cdw) && (kMDItemKind = "Ulysses Sheet*"cdwt))'
 MDFIND_GROUP_QUERY = '((** = "%s*"cdw) && (kMDItemKind = "Ulysses Group*"cdwt))'
 
+
 class Node:  # consider abstract
+    is_group = 'override'
+    is_sheet = 'override'
 
     def __init__(self, dirpath, parent_group):
         self.dirpath = dirpath
@@ -39,7 +42,7 @@ class Node:  # consider abstract
 class Group(Node):
 
     is_group = True
-    if_sheet = False
+    is_sheet = False
 
     def __init__(self, dirpath, parent_group):
         Node.__init__(self, dirpath, parent_group)
@@ -49,6 +52,12 @@ class Group(Node):
         self.name = plistlib.readPlist(join(self.dirpath, 'Info.ulgroup'))['displayName']
         #self.name = self.name.decode('utf-8')
         self.title = self.name
+
+    def number_descendents(self):
+        n = len(self.child_sheets)
+        for child_group in self.child_groups:
+            n = n + child_group.number_descendents()
+        return n
 
 
 class Sheet(Node):

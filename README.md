@@ -23,6 +23,9 @@ Use the keywords:
 Use the keyword:
 - `uo <arg>` -- Search for <arg> within Ulysses’ Open dialogue
 
+## Create or append to sheets
+- `un` -- create new sheet with optional text
+
 ## Configure view to open
 
 - `u:setsheetview` -- Set the view for opening sheets with (defaults to 'Editor Only')
@@ -30,7 +33,9 @@ Use the keyword:
 
 ## Alfred file action
 
-Use the **Open in Ulysses** file action to open text-like files in Ulysses
+- Use the **Open in Ulysses** file action to open text-like files in Ulysses
+- Use the **Import into Ulysses** file action to create a new sheet from text-like content
+
 
 ## Thanks
 - [deanishe](https://www.alfredforum.com/profile/5235-deanishe/) for the awesome [Python workflow library](http://www.deanishe.net/alfred-workflow/index.html)
@@ -43,6 +48,7 @@ Use the **Open in Ulysses** file action to open text-like files in Ulysses
 **0.9.3**
 - Added `uf` command to find groups and sheets based on their content (not just their first line)
 - `u` and `ug` now fuzzy search Ulysses' path to groups and sheets (not just their name or first line)
+- Added `un` command to create new sheet with optional text
 - Added an Alfred file action to open text-like files in Ulysses
 
 **0.9.2**
