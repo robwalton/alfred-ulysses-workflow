@@ -4,10 +4,11 @@
 import sys
 import os.path
 import argparse
+import json
 
 from workflow.workflow3 import Workflow3
 from workflow.workflow import MATCH_ALL, MATCH_ALLCHARS
-from workflow.workflow import ICON_WARNING
+from workflow.workflow import ICON_WARNING, ICON_ROOT
 
 import parse_ulysses
 
@@ -32,14 +33,20 @@ and may contain any of:
 UPDATE_SETTINGS = {'github_slug': 'robwalton/alfred-ulysses-workflow'}
 
 HELP_URL = 'https://github.com/robwalton/alfred-ulysses-workflow'
+
 ICON_UPDATE = 'update-available.png'
+
+GROUP_BULLET = u'\u25B6'  # u'\u25B8' (smaller triangle)
+
 
 logger = None
 
 
-def alfredworkflow(arg, node_type, search_in='', content_query=''):
-    return '{"alfredworkflow" :{"arg": "%s", "variables": {"search_in": "%s", "node_type": "%s", "content_query": "%s"}}}' % (arg, search_in, node_type, content_query)
-
+def alfredworkflow(arg, node_type='', search_in='', content_query='', kind_requested='', ulysses_path=''):
+    # https://www.alfredforum.com/topic/9070-how-to-workflowenvironment-variables/
+    variables_dict = dict(locals())
+    del variables_dict['arg']  # handled differently
+    return json.dumps({'alfredworkflow': {'arg': arg, 'variables': variables_dict}})
 
 def main(wf):
 
@@ -69,6 +76,9 @@ def main(wf):
                     autocomplete='wf:update',
                     icon=ICON_UPDATE)
 
+    # TODO: refactor as logic is getting pretty tougth to follow
+    #       too bad there are no tests
+
     # get all ulysses groups & sheets
     groups_tree = parse_ulysses.create_tree(parse_ulysses.GROUPS_ROOT, None)
     if args.limit_scope_dir:
@@ -93,9 +103,9 @@ def main(wf):
     if args.kind in ('sheet', 'all'):
         nodes.extend(sheets)
 
-    # filter nodes using fuzzy matching from {query}
+    # apply fuzzy matching
     if args.query and not args.search_content:
-        if args.search_ulysses_path:
+        if args.search_ulysses_path or args.kind == 'group':
             key_func = expanded_node_path
         else:
             key_func = node_title
@@ -114,24 +124,26 @@ def main(wf):
 
     for node in nodes:
 
-        pathlist = node.get_alfred_path_list()
-        if pathlist and (pathlist[0] == 'Main'):
-            pathlist = pathlist[1:]
+        pathlist = path_list_from_main(node)
 
         if node.is_group:
-            title = u'\u25B8' + ' ' + node.name
+            title = GROUP_BULLET + ' ' + node.name
             node_type = 'group'
+            metadata = ' (%i)' % node.number_descendents()
         elif node.is_sheet:
-            title = '   ' + node.first_line
+            title = '    ' + node.first_line.replace('#', '').strip()
             node_type = 'sheet'
+            metadata = ''
         else:
             assert False
 
-        content_query = args.query if args.search_content else ''
+        content_query = args.query if args.search_content else None
         item = wf.add_item(
             title,
-            subtitle='     ' + '/'.join(pathlist),
-            arg=alfredworkflow(node.openable_file, node_type, content_query=content_query),
+            subtitle='      ' + '/'.join(pathlist) + metadata,
+            arg=alfredworkflow(node.openable_file, node_type,
+                               content_query=content_query,
+                               kind_requested=args.kind),
             autocomplete=node.name if node.is_group else node.first_line,
             valid=True,
             uid=node.openable_file,
@@ -139,19 +151,62 @@ def main(wf):
             icontype='fileicon',
         )
 
+        ancestors = list(node.get_ancestors())
+        try:
+            current_group = ancestors.pop()  # this is actually the group we are in
+            next_group_up = ancestors.pop()
+            next_group_up_path = '/'.join(path_list_from_main(current_group, include_main=True)) # add next_group_up.name?
+        except IndexError:
+            next_group_up = None
+
+        if next_group_up:
+            item.add_modifier(
+                'shift',
+                subtitle='     Go up into: ' + next_group_up_path,
+                arg=alfredworkflow('', 'group', search_in=next_group_up.dirpath,
+                                   content_query=content_query,
+                                   kind_requested=args.kind),
+            )
+        else:
+            item.add_modifier(
+                'shift',
+                subtitle='     < at top level >',
+                valid=False
+            )
+
         if node.is_group:
             contains_another_group = len(node.child_groups) > 0
+            contains_sheets = len(node.child_sheets) > 0
 
-            if contains_another_group:
+            # work out if group should be drilled down into
+            if args.kind == 'group':
+                drillable = contains_another_group
+            elif args.kind == 'all':
+                drillable = contains_another_group or contains_sheets
+            else:
+                assert False
+
+            ulysses_path = '/' + '/'.join(node.get_alfred_path_list()) + '/' + node.name
+            if drillable:
                 item.add_modifier(
                     'cmd',
                     subtitle='     Go into: ' + '/'.join(pathlist) + '/' + node.name,
-                    arg=alfredworkflow('', 'group', search_in=node.dirpath, content_query=content_query),
+                    arg=alfredworkflow('', 'group', search_in=node.dirpath,
+                                       content_query=content_query,
+                                       kind_requested=args.kind,
+                                       ulysses_path=ulysses_path),
                 )
             else:
+                if args.kind == 'group':
+                    subtitle = '< no groups >'
+                elif args.kind == 'all':
+                    subtitle = '< empty >'
+                else:
+                    assert False
+
                 item.add_modifier(
                     'cmd',
-                    subtitle='     No more groups in: ' + '/'.join(pathlist) + '/' + node.name,
+                    subtitle='     ' + subtitle,
                     valid = False
                 )
 
@@ -168,6 +223,14 @@ def expanded_node_path(node):
 def node_title(node):
     return node.title
 
+
+def path_list_from_main(node, include_main=False):
+    pathlist = node.get_alfred_path_list()
+    if pathlist and (pathlist[0] == 'Main'):
+        if not include_main:
+            pathlist = pathlist[1:]
+
+    return pathlist
 
 if __name__ == "__main__":
     wf = Workflow3(help_url=HELP_URL,
