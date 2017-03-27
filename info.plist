@@ -1055,9 +1055,11 @@ cat "$query"</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>*** About to open ***
+				<string>
+*************************************
+*** About to open or create sheet ***
 '{query}', {allvars}
-***</string>
+*************************************</string>
 				<key>cleardebuggertext</key>
 				<false/>
 				<key>processoutputs</key>
@@ -1895,7 +1897,7 @@ create_new_sheet = true</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>var:new_item_text == true</string>
+			<string>var:create_new_sheet == true</string>
 			<key>xpos</key>
 			<integer>480</integer>
 			<key>ypos</key>
