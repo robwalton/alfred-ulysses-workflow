@@ -50,6 +50,8 @@ Use the keyword:
 - `u` and `ug` now fuzzy search Ulysses' path to groups and sheets (not just their name or first line)
 - Added `un` command to create new sheet with optional text
 - Added an Alfred file action to open text-like files in Ulysses
+- Added support for Inbox items
+- Added warning when no iCloud files found
 
 **0.9.2**
 - Fix race condition where toggling view state fails if Ulysses is launching

@@ -6,8 +6,8 @@ import plistlib
 # SHEET = "com.soulmen.ulysses3.sheet"
 # GROUP = "com.soulmen.ulysses3.group"
 
-ULYSSES3_LIB = join(os.environ['HOME'],'Library', 'Mobile Documents',
-                    'X5AZV975AG~com~soulmen~ulysses3','Documents', 'Library')
+ULYSSES3_LIB = join(os.environ['HOME'], 'Library', 'Mobile Documents',
+                    'X5AZV975AG~com~soulmen~ulysses3', 'Documents', 'Library')
 GROUPS_ROOT = join(ULYSSES3_LIB, 'Groups-ulgroup')
 UNFILED_ROOT = join(ULYSSES3_LIB, 'Unfiled-ulgroup')  # a.k.a. Inbox
 
@@ -38,7 +38,6 @@ class Node:  # consider abstract
         return [a.name for a in self.get_ancestors()]
 
 
-
 class Group(Node):
 
     is_group = True
@@ -49,8 +48,8 @@ class Group(Node):
         self.child_groups = []
         self.child_sheets = []
         self.openable_file = join(self.dirpath, 'Info.ulgroup')
-        self.name = plistlib.readPlist(join(self.dirpath, 'Info.ulgroup'))['displayName']
-        #self.name = self.name.decode('utf-8')
+        self.name = plistlib.readPlist(
+            join(self.dirpath, 'Info.ulgroup'))['displayName']
         self.title = self.name
 
     def number_descendents(self):
@@ -88,7 +87,6 @@ def filter_sheets(sheets, query):
     openable_files = subprocess.check_output(
         ['mdfind', MDFIND_SHEET_QUERY % query]).split('\n')
     return filter_nodes_by_openable_file(sheets, openable_files)
-
 
 
 def create_tree(rootgroupdir, parent_group):
@@ -134,4 +132,3 @@ def find_group_by_path(root_group, dirpath):
     for group in groups:
         if group.dirpath == dirpath:
             return group
-    #raise Exception('Group not found with dirpath == ' + dirpath)

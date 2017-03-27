@@ -11,6 +11,7 @@ from workflow.workflow import MATCH_ALL, MATCH_ALLCHARS
 from workflow.workflow import ICON_WARNING
 
 import parse_ulysses
+from parse_ulysses import GROUPS_ROOT, UNFILED_ROOT
 
 
 """Return Alfred items representing Ulysses groups and/or sheets.
@@ -26,8 +27,9 @@ HELP_URL = 'https://github.com/robwalton/alfred-ulysses-workflow'
 
 ICON_UPDATE = 'update-available.png'
 
-GROUP_BULLET = u'\u25B6'  # u'\u25B8' (smaller triangle)
-
+GROUP_BULLET = u'\u25B6'  # black triangle
+INBOX_BULLET = u'\u25B7'  # white triangle
+INBOX_SHEET_BULLET = u'\u25E6'  # white bullet
 
 logger = None
 
@@ -60,8 +62,26 @@ def main(wf):
     # Parse entire ulysses data structure
     include_groups = args.kind in ('group', 'all')
     include_sheets = args.kind in ('sheet', 'all')
-    groups, sheets = parse_ulysses_for_groups_and_sheets(
-        args.limit_scope_dir, include_groups, include_sheets)
+    groups = []
+    sheets = []
+
+    # Collect items from icloud
+    if os.path.exists(GROUPS_ROOT+'x'):
+        icld_groups, icld_sheets = parse_ulysses_for_groups_and_sheets(
+            GROUPS_ROOT, args.limit_scope_dir, include_groups, include_sheets)
+        groups.extend(icld_groups)
+        sheets.extend(icld_sheets)
+    else:
+        logger.warn("No iCloud library found at '%s'" % GROUPS_ROOT)
+        wf.add_item('No iCloud items found and external folders not supported',
+                    icon=ICON_WARNING)
+
+
+    # Collect items from Inbox
+    inbox_groups, inbox_sheets = parse_ulysses_for_groups_and_sheets(
+        UNFILED_ROOT, args.limit_scope_dir, include_groups, include_sheets)
+    groups.extend(inbox_groups)
+    sheets.extend(inbox_sheets)
 
     # filter on internal conent if applicable. Only really impacts sheets, but
     # use method on groups for simplicity.
@@ -112,12 +132,12 @@ def check_for_workflow_update(wf):
                     icon=ICON_UPDATE)
 
 
-def parse_ulysses_for_groups_and_sheets(limit_scope_dir, include_groups,
-                                        include_sheets):
+def parse_ulysses_for_groups_and_sheets(
+        root_dir, limit_scope_dir, include_groups, include_sheets):
     """Parse entire Ulysses trees and return list of groups and sheets"""
 
     # Get ulysses groups & sheets from iCloud
-    groups_tree = parse_ulysses.create_tree(parse_ulysses.GROUPS_ROOT, None)
+    groups_tree = parse_ulysses.create_tree(root_dir, None)
     if limit_scope_dir:
         group_to_search = parse_ulysses.find_group_by_path(groups_tree,
                                                            limit_scope_dir)
@@ -189,18 +209,31 @@ def add_ulysses_item_to_wf_results(wf, args, node):
     Return item for subsequent modification
     """
     pathlist = path_list_from_main(node)
-    ulysses_path = '/' + '/'.join(pathlist)
+    ulysses_path = '/'.join([''] + pathlist)
     if node.is_group:
-        title = GROUP_BULLET + ' ' + node.name
+        ulysses_path += '/' + node.name
+        if ulysses_path == '/Inbox':
+            bullet = INBOX_BULLET
+        else:
+            bullet = GROUP_BULLET
+        title = bullet + ' ' + node.name
         node_type = 'group'
         metadata = ' (%i)' % node.number_descendents()
-        ulysses_path += '/' + node.name
+
     elif node.is_sheet:
-        title = '    ' + node.first_line.replace('#', '').strip()
+        if node.first_line.strip() == '':
+            name = '< first line blank >'
+        else:
+            name = node.first_line.replace('#', '').strip()
+        if ulysses_path == '/Inbox':
+            title = ' ' + INBOX_SHEET_BULLET + '  ' + name
+        else:
+            title = '    ' + name
         node_type = 'sheet'
         metadata = ''
     else:
         assert False
+    logger.info(ulysses_path)
     content_query = args.query if args.search_content else ''
     item = wf.add_item(
         title,
