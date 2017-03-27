@@ -174,6 +174,15 @@ def fuzzy_filter_nodes(wf, nodes, query, search_whole_path):
     If search_whole_path is true then search the Ulysses path for query,
     otherwise just the name of the sheet or group.
     """
+    def expanded_node_path(node):
+        path_list = node.get_alfred_path_list()
+        path_list.append(node.title)
+        logger.info(' '.join(path_list))
+        return ' '.join(path_list)
+
+    def node_title(node):
+        return node.title
+
     if search_whole_path:
         key_func = expanded_node_path
     else:
@@ -261,7 +270,7 @@ def add_modifier_to_go_up_hierarchy(args, node, item):
     try:
         current_group = ancestors.pop()  # this is actually the group we are in
         next_group_up = ancestors.pop()
-        path_list = path_list_from_main(current_group, include_main=False)
+        path_list = path_list_from_main(current_group)
         next_group_up_path = '/' + '/'.join(path_list)
     except IndexError:
         next_group_up = None
@@ -313,23 +322,10 @@ def add_modifier_to_drill_down_hierarchy(args, node, item):
         item.add_modifier('cmd', subtitle='     ' + subtitle, valid=False)
 
 
-def expanded_node_path(node):
-    path_list = node.get_alfred_path_list()
-    path_list.append(node.title)
-    logger.info(' '.join(path_list))
-    return ' '.join(path_list)
-
-
-def node_title(node):
-    return node.title
-
-
-def path_list_from_main(node, include_main=False):
+def path_list_from_main(node):
     pathlist = node.get_alfred_path_list()
     if pathlist and (pathlist[0] == 'Main'):
-        if not include_main:
-            pathlist = pathlist[1:]
-
+        pathlist = pathlist[1:]
     return pathlist
 
 
