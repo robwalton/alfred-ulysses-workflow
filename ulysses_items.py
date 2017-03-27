@@ -11,7 +11,8 @@ from workflow.workflow import MATCH_ALL, MATCH_ALLCHARS
 from workflow.workflow import ICON_WARNING
 
 import parse_ulysses
-from parse_ulysses import GROUPS_ROOT, UNFILED_ROOT
+from parse_ulysses import ICLOUD_GROUPS_ROOT, ICLOUD_UNFILED_ROOT,\
+                          LOCAL_GROUPS_ROOT, LOCAL_UNFILED_ROOT
 
 
 """Return Alfred items representing Ulysses groups and/or sheets.
@@ -65,23 +66,27 @@ def main(wf):
     groups = []
     sheets = []
 
-    # Collect items from icloud
-    if os.path.exists(GROUPS_ROOT+'x'):
-        icld_groups, icld_sheets = parse_ulysses_for_groups_and_sheets(
-            GROUPS_ROOT, args.limit_scope_dir, include_groups, include_sheets)
-        groups.extend(icld_groups)
-        sheets.extend(icld_sheets)
-    else:
-        logger.warn("No iCloud library found at '%s'" % GROUPS_ROOT)
+    if not os.path.exists(ICLOUD_GROUPS_ROOT+'x'):
+        logger.warn("No iCloud library found at '%s'" % ICLOUD_GROUPS_ROOT)
         wf.add_item('No iCloud items found and external folders not supported',
                     icon=ICON_WARNING)
 
+    for rootdir, label in [
+            (ICLOUD_GROUPS_ROOT, 'iCloud'),
+            (ICLOUD_UNFILED_ROOT, 'iCloud Inbox'),
+            (LOCAL_GROUPS_ROOT, 'local'),
+            (LOCAL_UNFILED_ROOT, 'local Inbox'),
+            ]:
 
-    # Collect items from Inbox
-    inbox_groups, inbox_sheets = parse_ulysses_for_groups_and_sheets(
-        UNFILED_ROOT, args.limit_scope_dir, include_groups, include_sheets)
-    groups.extend(inbox_groups)
-    sheets.extend(inbox_sheets)
+        if os.path.exists(rootdir):
+            logger.info("Added %s items from '%s'" % (label, rootdir))
+            more_groups, more_sheets = parse_ulysses_for_groups_and_sheets(
+                rootdir, args.limit_scope_dir, include_groups,
+                include_sheets)
+            groups.extend(more_groups)
+            sheets.extend(more_sheets)
+        else:
+            logger.info("No %s items found at '%s'" % (label, rootdir))
 
     # filter on internal conent if applicable. Only really impacts sheets, but
     # use method on groups for simplicity.
@@ -141,8 +146,8 @@ def parse_ulysses_for_groups_and_sheets(
     if limit_scope_dir:
         group_to_search = parse_ulysses.find_group_by_path(groups_tree,
                                                            limit_scope_dir)
-        groups = group_to_search.child_groups
-        sheets = group_to_search.child_sheets
+        groups = group_to_search.child_groups if group_to_search else []
+        sheets = group_to_search.child_sheets if group_to_search else []
     else:
         groups, sheets = parse_ulysses.walk(groups_tree)
     if not include_groups:
@@ -233,7 +238,7 @@ def add_ulysses_item_to_wf_results(wf, args, node):
         metadata = ''
     else:
         assert False
-    logger.info(ulysses_path)
+
     content_query = args.query if args.search_content else ''
     item = wf.add_item(
         title,

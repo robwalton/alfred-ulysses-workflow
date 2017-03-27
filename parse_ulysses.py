@@ -2,19 +2,30 @@ import os
 from os.path import join
 import subprocess
 import plistlib
+import workflow
+import logging
 
 # SHEET = "com.soulmen.ulysses3.sheet"
 # GROUP = "com.soulmen.ulysses3.group"
 
-ULYSSES3_LIB = join(os.environ['HOME'], 'Library', 'Mobile Documents',
+ULYSSES3_ICLOUD_LIB = join(os.environ['HOME'], 'Library', 'Mobile Documents',
                     'X5AZV975AG~com~soulmen~ulysses3', 'Documents', 'Library')
-GROUPS_ROOT = join(ULYSSES3_LIB, 'Groups-ulgroup')
-UNFILED_ROOT = join(ULYSSES3_LIB, 'Unfiled-ulgroup')  # a.k.a. Inbox
+ICLOUD_GROUPS_ROOT = join(ULYSSES3_ICLOUD_LIB, 'Groups-ulgroup')
+ICLOUD_UNFILED_ROOT = join(ULYSSES3_ICLOUD_LIB, 'Unfiled-ulgroup')  # a.k.a. Inbox
+
+ULYSSES3_LOCAL_LIB = join(os.environ['HOME'], 'Library', 'Containers',
+                          'com.soulmen.ulysses3', 'Data', 'Documents',
+                          'Library')
+LOCAL_GROUPS_ROOT = join(ULYSSES3_LOCAL_LIB, 'Groups-ulgroup')
+LOCAL_UNFILED_ROOT = join(ULYSSES3_LOCAL_LIB, 'Unfiled-ulgroup')  # a.k.a. Inbox
 
 
 MDFIND_SHEET_QUERY = '((** = "%s*"cdw) && (kMDItemKind = "Ulysses Sheet*"cdwt))'
 MDFIND_GROUP_QUERY = '((** = "%s*"cdw) && (kMDItemKind = "Ulysses Group*"cdwt))'
 
+
+logger = workflow.Workflow3().logger
+logger.setLevel(logging.DEBUG)
 
 class Node:  # consider abstract
     is_group = 'override'
@@ -130,5 +141,8 @@ def walk(root_group):
 def find_group_by_path(root_group, dirpath):
     groups, _ = walk(root_group)
     for group in groups:
+        logger.debug('dirpath: ' + group.dirpath)
         if group.dirpath == dirpath:
             return group
+    return None
+#     raise Exception("Group with dirpath '%s' not found" % dirpath)

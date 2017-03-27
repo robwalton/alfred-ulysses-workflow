@@ -51,6 +51,7 @@ Use the keyword:
 - Added `un` command to create new sheet with optional text
 - Added an Alfred file action to open text-like files in Ulysses
 - Added support for Inbox items
+- Added support for local Ulysses (non-iCloud) items
 - Added warning when no iCloud files found
 
 **0.9.2**
