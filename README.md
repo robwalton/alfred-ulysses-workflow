@@ -24,7 +24,7 @@ Use the keyword:
 - `uo <arg>` -- Search for <arg> within Ulysses’ Open dialogue
 
 ## Create or append to sheets
-- `un` -- create new sheet with optional text
+- `un` -- create new sheet with optional text (shift-enter to create in /Inbox)
 
 ## Configure view to open
 

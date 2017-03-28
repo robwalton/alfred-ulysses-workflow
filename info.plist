@@ -81,6 +81,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>1BF8AE90-4A4E-4C4B-A83D-33907B999547</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1097316-7E5B-436C-97CD-3FF7C689E06F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3D0C9404-A2A6-40C3-9353-9353527F6841</key>
 		<array>
 			<dict>
@@ -200,6 +213,16 @@
 		</array>
 		<key>5F2D8B5F-784F-4039-B86E-6BD734C1DB6A</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1BF8AE90-4A4E-4C4B-A83D-33907B999547</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Create sheet in Inbox</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</string>
@@ -925,6 +948,47 @@ cat "$query"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>new_sheet_text</key>
+					<string>{query}</string>
+					<key>ulysses_path</key>
+					<string>/Inbox</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>1BF8AE90-4A4E-4C4B-A83D-33907B999547</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>un</string>
+				<key>subtext</key>
+				<string>Optionally enter text</string>
+				<key>text</key>
+				<string>New Sheet in Ulysses</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5F2D8B5F-784F-4039-B86E-6BD734C1DB6A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>inputstring</key>
 				<string>{var:create_new_sheet}</string>
 				<key>matchcasesensitive</key>
@@ -958,27 +1022,6 @@ cat "$query"</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>un</string>
-				<key>subtext</key>
-				<string>Optionally enter text</string>
-				<key>text</key>
-				<string>New Sheet in Ulysses</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>5F2D8B5F-784F-4039-B86E-6BD734C1DB6A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1597,6 +1640,18 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>ypos</key>
 			<integer>1310</integer>
 		</dict>
+		<key>1BF8AE90-4A4E-4C4B-A83D-33907B999547</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>new_sheet_text = {query}
+ulysses_path = /Inbox</string>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>680</integer>
+		</dict>
 		<key>27659738-CCEF-4E9A-998D-D5DE6939DD26</key>
 		<dict>
 			<key>colorindex</key>
@@ -1674,7 +1729,7 @@ create_new_sheet = true</string>
 			<key>xpos</key>
 			<integer>390</integer>
 			<key>ypos</key>
-			<integer>740</integer>
+			<integer>800</integer>
 		</dict>
 		<key>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</key>
 		<dict>
@@ -1879,7 +1934,7 @@ then highlight query in sheet</string>
 			<key>xpos</key>
 			<integer>600</integer>
 			<key>ypos</key>
-			<integer>710</integer>
+			<integer>650</integer>
 		</dict>
 		<key>C254DF3D-9EA0-40DE-8D51-C156A7F69F34</key>
 		<dict>
@@ -1926,9 +1981,9 @@ then highlight query in sheet</string>
 			<key>note</key>
 			<string>var:create_new_sheet == true</string>
 			<key>xpos</key>
-			<integer>510</integer>
+			<integer>500</integer>
 			<key>ypos</key>
-			<integer>740</integer>
+			<integer>800</integer>
 		</dict>
 		<key>EF6BADBE-B2C7-4FDC-937B-A6BD2DE8CB7F</key>
 		<dict>
