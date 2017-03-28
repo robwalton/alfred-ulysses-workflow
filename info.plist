@@ -283,19 +283,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>79767E79-7CDE-4F19-9743-378A6071DA2C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>7D4D1AE2-9B65-4AAE-A2A1-E5BED93E012E</key>
 		<array>
 			<dict>
@@ -326,7 +313,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>79767E79-7CDE-4F19-9743-378A6071DA2C</string>
+				<string>C254DF3D-9EA0-40DE-8D51-C156A7F69F34</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -365,6 +352,19 @@
 		</array>
 		<key>C1097316-7E5B-436C-97CD-3FF7C689E06F</key>
 		<array/>
+		<key>C254DF3D-9EA0-40DE-8D51-C156A7F69F34</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>CBB8EF84-9668-4350-A4C2-DAC52CF0F12C</key>
 		<array>
 			<dict>
@@ -751,23 +751,6 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Ulysses.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>79767E79-7CDE-4F19-9743-378A6071DA2C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
@@ -785,6 +768,42 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 			<string>93302667-ABA4-40C9-BB0B-B788FD818178</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  set theQuery to item 1 of argv
+	set ulyssesWasRunning to application "Ulysses" is running
+	if not ulyssesWasRunning
+		activate application "Ulysses"
+
+		repeat until application "Ulysses" is running
+			delay .2
+		end repeat
+			
+	end if
+
+  return theQuery
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C254DF3D-9EA0-40DE-8D51-C156A7F69F34</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -887,6 +906,64 @@ cat "$query"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>ulysses://x-callback-url/new-sheet?group={var:ulysses_path}&amp;text={var:new_sheet_text}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>C1097316-7E5B-436C-97CD-3FF7C689E06F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:create_new_sheet}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>true</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>E9080C23-BC51-45C1-B1D6-005B5A514B1E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>create_new_sheet</key>
+					<string>true</string>
+					<key>new_sheet_text</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
@@ -908,20 +985,65 @@ cat "$query"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>ug</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
 				<string></string>
-				<key>variables</key>
-				<dict>
-					<key>create_new_sheet</key>
-					<string>true</string>
-					<key>new_sheet_text</key>
-					<string>{query}</string>
-				</dict>
+				<key>script</key>
+				<string>/usr/bin/python ulysses_items.py "$1" --kind=group
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Open Ulysses Group</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</string>
+			<string>F384B949-9A4E-45AF-9E6E-69374567C35F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>
+*************************************
+*** About to open or create sheet ***
+'{query}', {allvars}
+*************************************</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>A4409E9E-E545-4988-A761-3688AF6D4522</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -972,152 +1094,6 @@ cat "$query"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>keyword</key>
-				<string>ug</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "$1" --kind=group
-</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Open Ulysses Group</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>F384B949-9A4E-45AF-9E6E-69374567C35F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>ulysses://x-callback-url/new-sheet?group={var:ulysses_path}&amp;text={var:new_sheet_text}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>C1097316-7E5B-436C-97CD-3FF7C689E06F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>inputstring</key>
-				<string>{var:create_new_sheet}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>matchstring</key>
-				<string>true</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>E9080C23-BC51-45C1-B1D6-005B5A514B1E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>
-*************************************
-*** About to open or create sheet ***
-'{query}', {allvars}
-*************************************</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>A4409E9E-E545-4988-A761-3688AF6D4522</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>keyword</key>
-				<string>uf</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "$1" --kind=all --search-content</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Find Ulysses Item</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>3D0C9404-A2A6-40C3-9353-9353527F6841</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1125,8 +1101,8 @@ cat "$query"</string>
 				<key>script</key>
 				<string>on run argv
 	repeat until application "Ulysses" is running
-		delay .5
-	end repeat	try		#activate application "Ulysses"		set viewToOpen to item 1 of argv		#delay .2		tell application "System Events" to tell process "Ulysses"			tell menu item viewToOpen of menu "View" of menu bar item "View" of menu bar 1				if value of attribute "AXMenuItemMarkChar" is not "✓" then click			end tell		end tell	on error errStr number errorNumber		if the errorNumber is equal to -1719 then			set theAlertText to "Cannot change the View setting in Ulysses."			set theAlertMessage to errStr &amp; "
+		delay .2
+	end repeat	try		set viewToOpen to item 1 of argv		#delay .2		tell application "System Events" to tell process "Ulysses"			tell menu item viewToOpen of menu "View" of menu bar item "View" of menu bar 1				if value of attribute "AXMenuItemMarkChar" is not "✓" then click			end tell		end tell	on error errStr number errorNumber		if the errorNumber is equal to -1719 then			set theAlertText to "Cannot change the View setting in Ulysses."			set theAlertMessage to errStr &amp; "
 			
 Allow Alfred access in the Accessibility section of the Privacy tab of your Mac's Security &amp; Privacy System preferences; or use u:setsheetview and u:setgroupview to se both to Default."						display alert theAlertText message theAlertMessage as critical buttons {"Cancel", "Open Preferences"} default button "Open Preferences" cancel button "Cancel"			--&gt; Result: {button returned:"Open Preferences"}						tell application "System Preferences"				activate				set current pane to pane "com.apple.preference.security"			end tell		else			-- An unknown error occurred. Resignal, so the caller			-- can handle it, or AppleScript can display the number.			error errStr number errorNumber		end if	end tryend run</string>
 				<key>scriptargtype</key>
@@ -1308,6 +1284,76 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>keyword</key>
+				<string>uf</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python ulysses_items.py "$1" --kind=all --search-content</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Find Ulysses Item</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3D0C9404-A2A6-40C3-9353-9353527F6841</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:search_in}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
 				<string>u</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
@@ -1340,33 +1386,6 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<string>00659145-0CEA-422B-A253-D70928DC6CC7</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>inputstring</key>
-				<string>{var:search_in}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>18104AA0-772A-4E62-BFE9-AB021444E7B2</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1536,7 +1555,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>1220</integer>
+			<integer>1340</integer>
 		</dict>
 		<key>0081F279-3540-4D3D-B6EF-77D6BAC59961</key>
 		<dict>
@@ -1563,9 +1582,9 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>200</integer>
+			<integer>210</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>650</integer>
 		</dict>
 		<key>18104AA0-772A-4E62-BFE9-AB021444E7B2</key>
 		<dict>
@@ -1583,16 +1602,16 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>200</integer>
+			<integer>210</integer>
 			<key>ypos</key>
-			<integer>490</integer>
+			<integer>510</integer>
 		</dict>
 		<key>2D4943A5-2135-4285-87CF-E842DBB1D7A9</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>210</integer>
 			<key>ypos</key>
 			<integer>130</integer>
 		</dict>
@@ -1603,7 +1622,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>note</key>
 			<string>Copy and paste {query} into 'Open' dialogue field</string>
 			<key>xpos</key>
-			<integer>580</integer>
+			<integer>600</integer>
 			<key>ypos</key>
 			<integer>370</integer>
 		</dict>
@@ -1632,7 +1651,7 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>1100</integer>
+			<integer>1220</integer>
 		</dict>
 		<key>3E09A0D5-0520-4C47-897C-A6A87E44D07C</key>
 		<dict>
@@ -1647,13 +1666,15 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 		</dict>
 		<key>42FFA9FA-29F0-4A07-B460-4F402D5EB4EB</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>note</key>
 			<string>new_sheet_text = {query}
 create_new_sheet = true</string>
 			<key>xpos</key>
 			<integer>390</integer>
 			<key>ypos</key>
-			<integer>800</integer>
+			<integer>740</integer>
 		</dict>
 		<key>4C61D21B-23C8-47CE-A5C9-8E8265841D8E</key>
 		<dict>
@@ -1669,7 +1690,7 @@ create_new_sheet = true</string>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>400</integer>
 			<key>ypos</key>
 			<integer>370</integer>
 		</dict>
@@ -1696,7 +1717,7 @@ create_new_sheet = true</string>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>note</key>
-			<string>Switch to configured view BUT OSX needs alfred accesibility access</string>
+			<string>Wait for Ulysses to start. Then Switch to configured view BUT OSX needs alfred accesibility access</string>
 			<key>xpos</key>
 			<integer>810</integer>
 			<key>ypos</key>
@@ -1716,7 +1737,9 @@ create_new_sheet = true</string>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>note</key>
-			<string>var:content_query != ""</string>
+			<string>if var:content_query != ""
+
+then highlight query in sheet</string>
 			<key>xpos</key>
 			<integer>950</integer>
 			<key>ypos</key>
@@ -1765,29 +1788,20 @@ create_new_sheet = true</string>
 		<key>7423C1EE-3346-4AE8-B866-ADBB331A7699</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>6</integer>
+			<integer>8</integer>
 			<key>xpos</key>
-			<integer>400</integer>
+			<integer>390</integer>
 			<key>ypos</key>
 			<integer>1190</integer>
-		</dict>
-		<key>79767E79-7CDE-4F19-9743-378A6071DA2C</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>4</integer>
-			<key>xpos</key>
-			<integer>240</integer>
-			<key>ypos</key>
-			<integer>370</integer>
 		</dict>
 		<key>7D4D1AE2-9B65-4AAE-A2A1-E5BED93E012E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>110</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>840</integer>
+			<integer>1100</integer>
 		</dict>
 		<key>803C351C-B48D-472C-BDDE-705FD0FBF3A2</key>
 		<dict>
@@ -1798,7 +1812,7 @@ create_new_sheet = true</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>490</integer>
+			<integer>510</integer>
 		</dict>
 		<key>93302667-ABA4-40C9-BB0B-B788FD818178</key>
 		<dict>
@@ -1821,11 +1835,13 @@ create_new_sheet = true</string>
 		<key>A4409E9E-E545-4988-A761-3688AF6D4522</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>6</integer>
+			<integer>8</integer>
+			<key>note</key>
+			<string>About to open or create note</string>
 			<key>xpos</key>
-			<integer>380</integer>
+			<integer>520</integer>
 			<key>ypos</key>
-			<integer>1090</integer>
+			<integer>1080</integer>
 		</dict>
 		<key>A59F421D-B415-4617-BF35-68E721C05B26</key>
 		<dict>
@@ -1841,14 +1857,14 @@ create_new_sheet = true</string>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>210</integer>
 			<key>ypos</key>
 			<integer>250</integer>
 		</dict>
 		<key>C0D68508-99F8-45D7-AC74-FA95B56211D9</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>9</integer>
+			<integer>8</integer>
 			<key>note</key>
 			<string>sleep .2 s</string>
 			<key>xpos</key>
@@ -1861,9 +1877,20 @@ create_new_sheet = true</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>690</integer>
+			<integer>600</integer>
 			<key>ypos</key>
-			<integer>990</integer>
+			<integer>710</integer>
+		</dict>
+		<key>C254DF3D-9EA0-40DE-8D51-C156A7F69F34</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
+			<key>note</key>
+			<string>Activate Ulyssis and wait until running</string>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>370</integer>
 		</dict>
 		<key>CBB8EF84-9668-4350-A4C2-DAC52CF0F12C</key>
 		<dict>
@@ -1872,7 +1899,7 @@ create_new_sheet = true</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>650</integer>
 		</dict>
 		<key>D25B7FD6-0BB6-41C2-A093-C5DDF80A5341</key>
 		<dict>
@@ -1899,9 +1926,9 @@ create_new_sheet = true</string>
 			<key>note</key>
 			<string>var:create_new_sheet == true</string>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>510</integer>
 			<key>ypos</key>
-			<integer>1010</integer>
+			<integer>740</integer>
 		</dict>
 		<key>EF6BADBE-B2C7-4FDC-937B-A6BD2DE8CB7F</key>
 		<dict>
@@ -1917,11 +1944,11 @@ create_new_sheet = true</string>
 		<key>F384B949-9A4E-45AF-9E6E-69374567C35F</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>6</integer>
+			<integer>8</integer>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>970</integer>
+			<integer>980</integer>
 		</dict>
 		<key>FB4DF08D-791C-4835-8DD2-737A778E5D3F</key>
 		<dict>
@@ -1935,7 +1962,7 @@ create_new_sheet = true</string>
 		<key>FC69CC4D-F5E4-4A9F-AA3E-0F5ED7B7E8DD</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>6</integer>
+			<integer>8</integer>
 			<key>note</key>
 			<string>var:search_in == ""</string>
 			<key>xpos</key>
@@ -1946,7 +1973,7 @@ create_new_sheet = true</string>
 		<key>FE0A0EB9-9E56-4F50-B384-81C6A8379CDB</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>6</integer>
+			<integer>8</integer>
 			<key>xpos</key>
 			<integer>220</integer>
 			<key>ypos</key>

@@ -53,6 +53,7 @@ Use the keyword:
 - Added support for Inbox items
 - Added support for local Ulysses (non-iCloud) items
 - Added warning when no iCloud files found
+- Fixed race condition with `uo` command when Ulysses is not activated
 
 **0.9.2**
 - Fix race condition where toggling view state fails if Ulysses is launching

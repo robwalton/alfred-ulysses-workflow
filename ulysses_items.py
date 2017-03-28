@@ -66,7 +66,7 @@ def main(wf):
     groups = []
     sheets = []
 
-    if not os.path.exists(ICLOUD_GROUPS_ROOT+'x'):
+    if not os.path.exists(ICLOUD_GROUPS_ROOT):
         logger.warn("No iCloud library found at '%s'" % ICLOUD_GROUPS_ROOT)
         wf.add_item('No iCloud items found and external folders not supported',
                     icon=ICON_WARNING)
