@@ -1004,7 +1004,7 @@ cat "$query"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "$1" --kind=group
+				<string>/usr/bin/python ulysses_items.py "$1" --kind=group --search-ulysses-path
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -1069,7 +1069,7 @@ cat "$query"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python ulysses_items.py "$1" --kind=sheet
+				<string>/usr/bin/python ulysses_items.py "$1" --kind=sheet --search-ulysses-path
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>

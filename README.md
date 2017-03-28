@@ -47,7 +47,7 @@ Use the keyword:
 
 **0.9.3**
 - Added `uf` command to find groups and sheets based on their content (not just their first line)
-- `u` and `ug` now fuzzy search Ulysses' path to groups and sheets (not just their name or first line)
+- `u`, `ug` and `uf` now fuzzy search Ulysses' path to groups and sheets (not just their name or first line)
 - Added `un` command to create new sheet with optional text
 - Added an Alfred file action to open text-like files in Ulysses
 - Added support for Inbox items
