@@ -40,7 +40,7 @@ Use the keyword:
 ## Thanks
 - [deanishe](https://www.alfredforum.com/profile/5235-deanishe/) for the awesome [Python workflow library](http://www.deanishe.net/alfred-workflow/index.html)
 - [dunkaroo](https://www.alfredforum.com/profile/11116-dunkaroo/) for searching and file action help
-- [dfay](https://www.alfredforum.com/profile/3468-dfay/) for file creation ideas
+- [dfay](https://www.alfredforum.com/profile/3468-dfay/) for the new sheet code and file opener and importer
 - [katie](https://www.alfredforum.com/profile/5999-katie/) for thoughts on how find command should work
 
 ## Versions
