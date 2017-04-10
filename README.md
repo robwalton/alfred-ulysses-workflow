@@ -47,8 +47,8 @@ Use the keyword:
 
 **1.0**
 - Fixed 100% cpu hang on Sierra with update of alfred-workflow to 1.25.1
-- Added `uf` command to find groups and sheets based on their content (not just their first line)
-- `u`, `ug` and `uf` now fuzzy search Ulysses' path to groups and sheets (not just their name or first line)
+- Added `uf` command to find groups and sheets based on their internal content
+- `u`, `ug` and `uf` now use fuzzy search Ulysses' path to groups and sheets
 - Added `un` command to create new sheet with optional text
 - Added an Alfred file action to open text-like files in Ulysses
 - Added support for Inbox items
@@ -67,9 +67,6 @@ Use the keyword:
 
 **0.9**
 - Initial public release
-
-
-
 
 ## To contribute
 To contribute to the workflow please fork on github: https://github.com/robwalton/alfred-ulysses-workflow
