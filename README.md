@@ -6,12 +6,10 @@
 To install, download a released Ulysses.alfredworkflow and double-click to open in Alfred 3. Alternatively, download what should be the most recent version hosted on [Packal](http://www.packal.org/workflow/ulysses). There is a [discussion thread on the Alfred forum](http://www.alfredforum.com/topic/9662-ulysses-workflow/).
 
 ## Get help
-Use the keyword:
 
-- `u:help` -- Show a brief summary of commands
+- `u:help` -- Show this brief summary of commands
 
 ## Open group or sheet
-Use the keywords:
 
 - `uf` -- Find a group or sheet based on internal content
 - `u` -- Open group or sheet (cmd-return to drill down)
@@ -20,22 +18,20 @@ Use the keywords:
 
 ## Pop open Ulysses Open dialogue
 
-Use the keyword:
 - `uo <arg>` -- Search for <arg> within Ulysses’ Open dialogue
 
 ## Create or append to sheets
 - `un` -- create new sheet with optional text (shift-enter to create in /Inbox)
-
-## Configure view to open
-
-- `u:setsheetview` -- Set the view for opening sheets with (defaults to 'Editor Only')
-- `u:setgroupview` -- Set the view for opening groups with (defaults to 'Sheets')
 
 ## Alfred file action
 
 - Use the **Open in Ulysses** file action to open text-like files in Ulysses
 - Use the **Import into Ulysses** file action to create a new sheet from text-like content
 
+## Configure view to open
+
+- `u:setsheetview` -- Set the view for opening sheets with (defaults to 'Editor Only')
+- `u:setgroupview` -- Set the view for opening groups with (defaults to 'Sheets')
 
 ## Thanks
 - [deanishe](https://www.alfredforum.com/profile/5235-deanishe/) for the awesome [Python workflow library](http://www.deanishe.net/alfred-workflow/index.html)
