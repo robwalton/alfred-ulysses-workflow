@@ -1,6 +1,5 @@
 In Alfred:
 
-- Release notes in calls.scpt?
 - Update 'About this workflow'
 - Check works with ~/Library/Application Support/Alfred 3/Workflow Data/com.github.robwalton.ulysses-alfred-workflow removed
 - Check works with Ulysses closed
