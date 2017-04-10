@@ -144,10 +144,14 @@ def parse_ulysses_for_groups_and_sheets(
     # Get ulysses groups & sheets from iCloud
     groups_tree = parse_ulysses.create_tree(root_dir, None)
     if limit_scope_dir:
-        group_to_search = parse_ulysses.find_group_by_path(groups_tree,
+        try:
+            group_to_search = parse_ulysses.find_group_by_path(groups_tree,
                                                            limit_scope_dir)
-        groups = group_to_search.child_groups if group_to_search else []
-        sheets = group_to_search.child_sheets if group_to_search else []
+            groups = group_to_search.child_groups
+            sheets = group_to_search.child_sheets
+        except KeyError:
+            groups = []
+            sheets = []
     else:
         groups, sheets = parse_ulysses.walk(groups_tree)
     if not include_groups:
@@ -323,6 +327,7 @@ def add_modifier_to_drill_down_hierarchy(args, node, item):
 
 
 def path_list_from_main(node):
+    """Return Ulysses path as list, not including the inetrnally named Main node"""
     pathlist = node.get_alfred_path_list()
     if pathlist and (pathlist[0] == 'Main'):
         pathlist = pathlist[1:]

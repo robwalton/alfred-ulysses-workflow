@@ -127,8 +127,7 @@ def create_tree(rootgroupdir, parent_group):
 
 
 def walk(root_group):
-    '''groups, sheets = walk(root_group)
-    '''
+    """Walk a tree of nodes and return sheets and groups"""
     groups = [root_group]
     sheets = list(root_group.child_sheets)
     for child_group in root_group.child_groups:
@@ -139,10 +138,12 @@ def walk(root_group):
 
 
 def find_group_by_path(root_group, dirpath):
+    """Walk a tree of nodes and return the one backed by given dirpath
+
+    KeyError if not found
+    """
     groups, _ = walk(root_group)
     for group in groups:
-        logger.debug('dirpath: ' + group.dirpath)
         if group.dirpath == dirpath:
             return group
-    return None
-#     raise Exception("Group with dirpath '%s' not found" % dirpath)
+    raise KeyError("Group with dirpath '%s' not found" % dirpath)

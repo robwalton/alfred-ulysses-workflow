@@ -571,25 +571,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://github.com/robwalton/alfred-ulysses-workflow/blob/master/README.md</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>3815FE07-095F-4DE0-8C03-381CECC44FDD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -613,6 +594,25 @@ sys.stdout.write(workflow_version)
 			<string>A59F421D-B415-4617-BF35-68E721C05B26</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://github.com/robwalton/alfred-ulysses-workflow/blob/master/README.md</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>3815FE07-095F-4DE0-8C03-381CECC44FDD</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1695,7 +1695,7 @@ ulysses_path = /Inbox</string>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>580</integer>
+			<integer>600</integer>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
@@ -1862,8 +1862,6 @@ then highlight query in sheet</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
-			<key>note</key>
-			<string>Open a text file in Ulysses</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
@@ -1903,7 +1901,7 @@ then highlight query in sheet</string>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>210</integer>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
