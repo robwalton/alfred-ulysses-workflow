@@ -1577,18 +1577,14 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>See packal.org/workflow/ulysses for full instructions
+	<string>Alfred 3 workflow for Ulysses
 
-# Keywords #
+See
+- packal.org/workflow/ulysses or
+- https://github.com/robwalton/alfred-ulysses-workflow/blob/master/README.md for full instructions
 
-- u:help			Show a brief summary of commands
-- u 				Open group or sheet (cmd-return to drill down)
-- ug				Open group (cmd-return to drill down)
-- us				Open sheet
-- uo &lt;arg&gt;		Search for &lt;arg&gt; within Ulysses’ Open dialogue
-
-- u:setsheetview      Set the view into switch to after opening a sheet (defaults to 'Editor Only')
-- u:setgroupview      Set the view into switch to after opening a group (defaults to 'Sheets')</string>
+For help vsit
+- http://www.alfredforum.com/topic/9662-ulysses-workflow/</string>
 	<key>uidata</key>
 	<dict>
 		<key>00659145-0CEA-422B-A253-D70928DC6CC7</key>
@@ -2036,10 +2032,10 @@ then highlight query in sheet</string>
 	<key>variables</key>
 	<dict>
 		<key>SemVer</key>
-		<string>.9.3-b</string>
+		<string>1.0</string>
 	</dict>
 	<key>version</key>
-	<string>.9.3-b</string>
+	<string>1.0</string>
 	<key>webaddress</key>
 	<string>github.com/robwalton/alfred-ulysses-workflow</string>
 </dict>

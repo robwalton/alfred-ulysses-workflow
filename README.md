@@ -45,13 +45,14 @@ Use the keyword:
 
 ## Versions
 
-**0.9.3**
+**1.0**
+- Fixed 100% cpu hang on Sierra with update of alfred-workflow to 1.25.1
 - Added `uf` command to find groups and sheets based on their content (not just their first line)
 - `u`, `ug` and `uf` now fuzzy search Ulysses' path to groups and sheets (not just their name or first line)
 - Added `un` command to create new sheet with optional text
 - Added an Alfred file action to open text-like files in Ulysses
 - Added support for Inbox items
-- Added support for local Ulysses (non-iCloud) items
+- Added support for local Ulysses (non-iCloud) items (still no external folders)
 - Added warning when no iCloud files found
 - Fixed race condition with `uo` command when Ulysses is not activated
 
