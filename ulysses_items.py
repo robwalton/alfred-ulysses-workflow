@@ -132,7 +132,7 @@ def main(wf):
         item = add_ulysses_item_to_wf_results(wf, args, node)
         # note that the wf keeps a copy of the item; we need only modify it
         item = add_modifier_to_go_up_hierarchy(args, node, item)
-        if node.is_group:
+        if node.type == 'group':
             item = add_modifier_to_drill_down_hierarchy(args, node, item)
 
     wf.send_feedback()
@@ -168,8 +168,8 @@ def parse_ulysses_for_groups_and_sheets(
         try:
             group_to_search = parse_ulysses.find_group_by_path(
                 groups_tree, limit_scope_dir)
-            groups = group_to_search.child_groups
-            sheets = group_to_search.child_sheets
+            groups = group_to_search.containers
+            sheets = group_to_search.sheets
         except KeyError:
             groups = []
             sheets = []
@@ -249,21 +249,21 @@ def add_ulysses_item_to_wf_results(wf, args, node):
     """
     pathlist = path_list_from_main(node)
     ulysses_path = '/'.join([''] + pathlist)
-    if node.is_group:
-        ulysses_path += '/' + node.name
+    if node.type == 'group':
+        ulysses_path += '/' + node.title
         if ulysses_path == '/Inbox':
             bullet = INBOX_BULLET
         else:
             bullet = GROUP_BULLET
-        title = bullet + ' ' + node.name
+        title = bullet + ' ' + node.title
         node_type = 'group'
         metadata = ' (%i)' % node.number_descendents()
 
-    elif node.is_sheet:
-        if node.first_line.strip() == '':
+    elif node.type == 'sheet':
+        if node.title.strip() == '':
             name = '< first line blank >'
         else:
-            name = node.first_line.replace('#', '').strip()
+            name = node.title.replace('#', '').strip()
         if ulysses_path == '/Inbox':
             title = ' ' + INBOX_SHEET_BULLET + '  ' + name
         else:
@@ -281,7 +281,7 @@ def add_ulysses_item_to_wf_results(wf, args, node):
                            content_query=content_query,
                            kind_requested=args.kind,
                            ulysses_path=ulysses_path),
-        autocomplete=node.name if node.is_group else node.first_line,
+        autocomplete=node.title,
         valid=True,
         uid=node.openable_file,
         icon=node.openable_file,
@@ -317,8 +317,8 @@ def add_modifier_to_go_up_hierarchy(args, node, item):
 
 def add_modifier_to_drill_down_hierarchy(args, node, item):
     """Add shift modifier to Ulysses item to request move down hierarchy."""
-    contains_another_group = len(node.child_groups) > 0
-    contains_sheets = len(node.child_sheets) > 0
+    contains_another_group = len(node.containers) > 0
+    contains_sheets = len(node.sheets) > 0
 
     # work out if group should be drilled down into
     if args.kind == 'group':
@@ -332,7 +332,7 @@ def add_modifier_to_drill_down_hierarchy(args, node, item):
 
     if drillable:
         pathlist = path_list_from_main(node)
-        subtitle = '     Go into: ' + '/'.join(pathlist) + '/' + node.name
+        subtitle = '     Go into: ' + '/'.join(pathlist) + '/' + node.title
         arg = alfredworkflow('', 'group', search_in=node.dirpath,
                              content_query=content_query,
                              kind_requested=args.kind)

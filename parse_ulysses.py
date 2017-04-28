@@ -27,14 +27,14 @@ MDFIND_GROUP_QUERY = '((** = "%s*"cdw) && (kMDItemKind = "Ulysses Group*"cdwt))'
 logger = workflow.Workflow3().logger
 logger.setLevel(logging.DEBUG)
 
-class Node:  # consider abstract
-    is_group = 'override'
-    is_sheet = 'override'
 
-    def __init__(self, dirpath, parent_group):
+class AbstractItem:  # consider abstract
+
+    def __init__(self, dirpath, parent_group, _type):
         self.dirpath = dirpath
         self.parent_group = parent_group
         self.title = None
+        self.type = _type
 
     def get_ancestors(self):
         ancestors = []
@@ -46,42 +46,34 @@ class Node:  # consider abstract
         return ancestors
 
     def get_alfred_path_list(self):
-        return [a.name for a in self.get_ancestors()]
+        return [a.title for a in self.get_ancestors()]
 
 
-class Group(Node):
-
-    is_group = True
-    is_sheet = False
+class Group(AbstractItem):
 
     def __init__(self, dirpath, parent_group):
-        Node.__init__(self, dirpath, parent_group)
-        self.child_groups = []
-        self.child_sheets = []
+        AbstractItem.__init__(self, dirpath, parent_group, 'group')
+        self.containers = []
+        self.sheets = []
         self.openable_file = join(self.dirpath, 'Info.ulgroup')
-        self.name = plistlib.readPlist(
+        self.title = plistlib.readPlist(
             join(self.dirpath, 'Info.ulgroup'))['displayName']
-        self.title = self.name
 
     def number_descendents(self):
-        n = len(self.child_sheets)
-        for child_group in self.child_groups:
+        n = len(self.sheets)
+        for child_group in self.containers:
             n = n + child_group.number_descendents()
         return n
 
 
-class Sheet(Node):
-
-    is_group = False
-    is_sheet = True
+class Sheet(AbstractItem):
 
     def __init__(self, dirpath, parent_group):
-        Node.__init__(self, dirpath, parent_group)
+        AbstractItem.__init__(self, dirpath, parent_group, 'sheet')
         self.dirpath = dirpath
         self.openable_file = dirpath
         with open(join(self.dirpath, 'Text.txt'), 'r') as f:
-            self.first_line = f.readline().decode('utf-8').strip()
-        self.title = self.first_line
+            self.title = f.readline().decode('utf-8').strip()
 
 
 def filter_nodes_by_openable_file(nodes, openable_file_list):
@@ -115,13 +107,13 @@ def create_tree(rootgroupdir, parent_group):
     # Add Sheets
     for sheetdir in sheetdirlist:
         sheet = Sheet(join(rootgroupdir, sheetdir), group)
-        group.child_sheets.append(sheet)
+        group.sheets.append(sheet)
 
     # Recursively add groups
     for child_groupdir in groupdirlist:
         child_group = create_tree(join(rootgroupdir, child_groupdir), group)
         assert child_group != group
-        group.child_groups.append(child_group)
+        group.containers.append(child_group)
 
     return group
 
@@ -129,8 +121,8 @@ def create_tree(rootgroupdir, parent_group):
 def walk(root_group):
     """Walk a tree of nodes and return sheets and groups"""
     groups = [root_group]
-    sheets = list(root_group.child_sheets)
-    for child_group in root_group.child_groups:
+    sheets = list(root_group.sheets)
+    for child_group in root_group.containers:
         descendent_groups, descendent_sheets = walk(child_group)
         groups += descendent_groups
         sheets += descendent_sheets
