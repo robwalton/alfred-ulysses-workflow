@@ -47,6 +47,9 @@ GROUP_BULLET = u'\u25B6'  # black triangle
 INBOX_BULLET = u'\u25B7'  # white triangle
 INBOX_SHEET_BULLET = u'\u25E6'  # white bullet
 
+ICLOUD_ONLY = True
+
+
 logger = None
 
 
@@ -86,12 +89,15 @@ def main(wf):
         wf.add_item('No iCloud items found and external folders not supported',
                     icon=ICON_WARNING)
 
-    for rootdir, label in [
-            (ICLOUD_GROUPS_ROOT, 'iCloud'),
-            (ICLOUD_UNFILED_ROOT, 'iCloud Inbox'),
+    file_system_root_label_pairs = [
+        (ICLOUD_GROUPS_ROOT, 'iCloud'),
+        (ICLOUD_UNFILED_ROOT, 'iCloud Inbox')]
+    if not ICLOUD_ONLY:
+        file_system_root_label_pairs.extend([
             (LOCAL_GROUPS_ROOT, 'local'),
-            (LOCAL_UNFILED_ROOT, 'local Inbox'),
-            ]:
+            (LOCAL_UNFILED_ROOT, 'local Inbox')])
+
+    for rootdir, label in file_system_root_label_pairs:
 
         if os.path.exists(rootdir):
             logger.info("Added %s items from '%s'" % (label, rootdir))
@@ -160,8 +166,8 @@ def parse_ulysses_for_groups_and_sheets(
     groups_tree = parse_ulysses.create_tree(root_dir, None)
     if limit_scope_dir:
         try:
-            group_to_search = parse_ulysses.find_group_by_path(groups_tree,
-                                                           limit_scope_dir)
+            group_to_search = parse_ulysses.find_group_by_path(
+                groups_tree, limit_scope_dir)
             groups = group_to_search.child_groups
             sheets = group_to_search.child_sheets
         except KeyError:
