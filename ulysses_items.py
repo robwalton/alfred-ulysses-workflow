@@ -21,6 +21,21 @@ See parser below.
 
 """
 
+# NOTE: As this module is called by Alfred and returns its ourput via
+#       stdout, it must never print or confusion will result.
+
+try:
+    import ulysses
+except ImportError:
+    # During development, add neighbouring ulysses-python-client repo to path.
+    # (for access to ulysses)
+    ULYSSES_PYTHON_CLIENT_PATH = (
+        '/'.join((os.path.dirname(os.path.abspath(__file__)).split('/')[:-1]))
+        + '/ulysses-python-client')
+
+    sys.path.insert(0, ULYSSES_PYTHON_CLIENT_PATH)
+    import ulysses
+
 
 UPDATE_SETTINGS = {'github_slug': 'robwalton/alfred-ulysses-workflow'}
 
@@ -121,8 +136,8 @@ def validify_args(args):
     """Validate args"""
     assert args.kind in ('group', 'sheet', 'all')
     if args.limit_scope_dir:
-        assert (os.path.exists(args.limit_scope_dir),
-                "Path does not exist: '%s'" % args.limit_scope_dir)
+        assert os.path.exists(args.limit_scope_dir), (
+            "Path does not exist: '%s'" % args.limit_scope_dir)
     if args.query:
         args.query = args.query.strip()
     if args.search_ulysses_path and args.search_content:
