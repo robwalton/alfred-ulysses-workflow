@@ -56,20 +56,7 @@ logger = None
 def main(wf):
 
     # Parse args
-    parser = argparse.ArgumentParser()
-    parser.add_argument('query', type=str, nargs='?', default=None,
-                        help='query used normally for searching')
-    parser.add_argument('--kind', dest='kind', type=str, nargs='?',
-                        help='items to return: group, sheet or all')
-    parser.add_argument('--limit-scope-to-dir', dest='limit_scope_dir',
-                        nargs='?',
-                        help='limit search to directory on file system')
-    parser.add_argument('--search-content', dest='search_content',
-                        action='store_true',
-                        help='search inside content')
-    parser.add_argument('--search-ulysses-path', dest='search_ulysses_path',
-                        action='store_true',
-                        help='search full path to item, not just node name')
+    parser = build_parser()
 
     args = parser.parse_args(wf.args)
     logger.info('ulysses_items.main(wf): args = \n' + str(args))
@@ -84,30 +71,18 @@ def main(wf):
     groups = []
     sheets = []
 
-    if not os.path.exists(ICLOUD_GROUPS_ROOT):
-        logger.warn("No iCloud library found at '%s'" % ICLOUD_GROUPS_ROOT)
-        wf.add_item('No iCloud items found and external folders not supported',
-                    icon=ICON_WARNING)
+#     if not os.path.exists(ICLOUD_GROUPS_ROOT):
+#         logger.warn("No iCloud library found at '%s'" % ICLOUD_GROUPS_ROOT)
+#         wf.add_item('No iCloud items found and external folders not supported',
+#                     icon=ICON_WARNING)
 
-    file_system_root_label_pairs = [
-        (ICLOUD_GROUPS_ROOT, 'iCloud'),
-        (ICLOUD_UNFILED_ROOT, 'iCloud Inbox')]
-    if not ICLOUD_ONLY:
-        file_system_root_label_pairs.extend([
-            (LOCAL_GROUPS_ROOT, 'local'),
-            (LOCAL_UNFILED_ROOT, 'local Inbox')])
 
-    for rootdir, label in file_system_root_label_pairs:
+    for group_tree in parse_ulysses.library().values():
+        more_groups, more_sheets = groups_and_sheets_from_tree(
+            group_tree, args.limit_scope_dir, include_groups, include_sheets)
+        groups.extend(more_groups)
+        sheets.extend(more_sheets)
 
-        if os.path.exists(rootdir):
-            logger.info("Added %s items from '%s'" % (label, rootdir))
-            more_groups, more_sheets = parse_ulysses_for_groups_and_sheets(
-                rootdir, args.limit_scope_dir, include_groups,
-                include_sheets)
-            groups.extend(more_groups)
-            sheets.extend(more_sheets)
-        else:
-            logger.info("No %s items found at '%s'" % (label, rootdir))
 
     # filter on internal conent if applicable. Only really impacts sheets, but
     # use method on groups for simplicity.
@@ -158,12 +133,10 @@ def check_for_workflow_update(wf):
                     icon=ICON_UPDATE)
 
 
-def parse_ulysses_for_groups_and_sheets(
-        root_dir, limit_scope_dir, include_groups, include_sheets):
+def groups_and_sheets_from_tree(
+        groups_tree, limit_scope_dir, include_groups, include_sheets):
     """Parse entire Ulysses trees and return list of groups and sheets"""
 
-    # Get ulysses groups & sheets from iCloud
-    groups_tree = parse_ulysses.create_tree(root_dir, None)
     if limit_scope_dir:
         try:
             group_to_search = parse_ulysses.find_group_by_path(
@@ -353,6 +326,16 @@ def path_list_from_main(node):
     if pathlist and (pathlist[0] == 'Main'):
         pathlist = pathlist[1:]
     return pathlist
+
+
+def build_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('query', type=str, nargs='?', default=None, help='query used normally for searching')
+    parser.add_argument('--kind', dest='kind', type=str, nargs='?', help='items to return: group, sheet or all')
+    parser.add_argument('--limit-scope-to-dir', dest='limit_scope_dir', nargs='?', help='limit search to directory on file system')
+    parser.add_argument('--search-content', dest='search_content', action='store_true', help='search inside content')
+    parser.add_argument('--search-ulysses-path', dest='search_ulysses_path', action='store_true', help='search full path to item, not just node name')
+    return parser
 
 
 if __name__ == "__main__":

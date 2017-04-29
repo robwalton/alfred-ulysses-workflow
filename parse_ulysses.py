@@ -4,9 +4,12 @@ import subprocess
 import plistlib
 import workflow
 import logging
+from collections import OrderedDict
 
 # SHEET = "com.soulmen.ulysses3.sheet"
 # GROUP = "com.soulmen.ulysses3.group"
+
+INCLUDE_LOCAL_LIBRARY = True
 
 ULYSSES3_ICLOUD_LIB = join(os.environ['HOME'], 'Library', 'Mobile Documents',
                     'X5AZV975AG~com~soulmen~ulysses3', 'Documents', 'Library')
@@ -54,6 +57,7 @@ class Group(AbstractItem):
     def __init__(self, dirpath, parent_group):
         AbstractItem.__init__(self, dirpath, parent_group, 'group')
         self.containers = []
+        self.containers_by_title = {}
         self.sheets = []
         self.openable_file = join(self.dirpath, 'Info.ulgroup')
         self.title = plistlib.readPlist(
@@ -114,6 +118,7 @@ def create_tree(rootgroupdir, parent_group):
         child_group = create_tree(join(rootgroupdir, child_groupdir), group)
         assert child_group != group
         group.containers.append(child_group)
+        group.containers_by_title[child_group.title] = child_group
 
     return group
 
@@ -139,3 +144,42 @@ def find_group_by_path(root_group, dirpath):
         if group.dirpath == dirpath:
             return group
     raise KeyError("Group with dirpath '%s' not found" % dirpath)
+
+
+def library():
+    """Return the Ulysses library as an OrderedDict of named groups."""
+    
+    lib_dict = OrderedDict()
+    
+    if os.path.exists(ICLOUD_GROUPS_ROOT):
+        icloud_root = create_tree(ICLOUD_GROUPS_ROOT, None)
+        # Rename to match title from callback
+        assert icloud_root.title == 'Main'
+        icloud_root.title = 'iCloud'
+        
+        icloud_inbox = create_tree(ICLOUD_UNFILED_ROOT, None)
+        icloud_root.containers.insert(0, icloud_inbox)
+        icloud_root.containers_by_title['Inbox'] = icloud_inbox
+        lib_dict['iCloud'] = icloud_root
+        logger.info("Added iCloud items from '%s'" % ICLOUD_GROUPS_ROOT)     
+    else:
+        logger.warn("No iCloud items found at '%s'" % ICLOUD_GROUPS_ROOT)
+    
+    
+    if INCLUDE_LOCAL_LIBRARY:
+        if os.path.exists(LOCAL_GROUPS_ROOT):
+            local_root = create_tree(LOCAL_GROUPS_ROOT, None)
+            assert local_root.title == 'Main'
+            local_root.title = 'On My Mac'
+            local_inbox = create_tree(LOCAL_UNFILED_ROOT, None)
+            local_root.containers.insert(0, local_inbox)
+            local_root.containers_by_title['Inbox'] = local_inbox
+            lib_dict['On My Mac'] = local_root
+
+            logger.info("Added 'On My Mac' items from '%s'" % LOCAL_GROUPS_ROOT)
+        else:
+            logger.warn("No 'On My Mac' items found at '%s'" % ICLOUD_UNFILED_ROOT)
+        
+    return lib_dict
+
+
