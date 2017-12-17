@@ -146,19 +146,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>31247F5F-C0FC-46BB-AEEB-33B53A0EA869</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>51639D3C-CF18-491E-846B-4C6771C1CFA5</key>
 		<array>
 			<dict>
@@ -379,7 +366,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</string>
+				<string>31247F5F-C0FC-46BB-AEEB-33B53A0EA869</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -645,6 +632,10 @@ ulysses_view.set_view_setting("group", view_to_set)</string>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -689,6 +680,10 @@ ulysses_view.set_view_setting("group", view_to_set)</string>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -757,23 +752,6 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>keychar</key>
-				<string>o</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>1048576</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
@@ -801,19 +779,15 @@ ulysses_view.set_view_setting("sheet", view_to_set)</string>
 				<integer>68</integer>
 				<key>script</key>
 				<string>on run argv
+
   set theQuery to item 1 of argv
-	set ulyssesWasRunning to application "Ulysses" is running
-	if not ulyssesWasRunning
-		activate application "Ulysses"
+	
+  --bring Ulysses to forground starting if necessary  activate application "UlyssesMac"  --Ulysses takes a while to open its main window even after it has started.  --So loop until its in the forground:  repeat while getFrontmostApplicationName() is not "UlyssesMac"    delay 0.2  end repeat  tell application "System Events"    keystroke "O" using command down  end tell  return theQuery
 
-		repeat until application "Ulysses" is running
-			delay .2
-		end repeat
-			
-	end if
+end run
 
-  return theQuery
-end run</string>
+
+on getFrontmostApplicationName()	tell application "System Events"		set frontApp to name of first application process whose frontmost is true	end tell	return frontAppend getFrontmostApplicationName</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1030,6 +1004,10 @@ cat "$query"</string>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -1095,6 +1073,10 @@ cat "$query"</string>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -1165,6 +1147,8 @@ Allow Alfred access in the Accessibility section of the Privacy tab of your Mac'
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>count</key>
+				<integer>1</integer>
 				<key>keychar</key>
 				<string>f</string>
 				<key>keycode</key>
@@ -1322,6 +1306,10 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -1392,6 +1380,10 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -1454,6 +1446,10 @@ sys.stdout.write(ulysses_view.get_view_setting(node_type))</string>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -1736,15 +1732,6 @@ create_new_sheet = true</string>
 			<key>ypos</key>
 			<integer>1160</integer>
 		</dict>
-		<key>4D3DEADF-FC0D-4085-ACA7-3A1CCE6865A9</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>4</integer>
-			<key>xpos</key>
-			<integer>400</integer>
-			<key>ypos</key>
-			<integer>370</integer>
-		</dict>
 		<key>51639D3C-CF18-491E-846B-4C6771C1CFA5</key>
 		<dict>
 			<key>colorindex</key>
@@ -1935,7 +1922,7 @@ then highlight query in sheet</string>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>note</key>
-			<string>Activate Ulyssis and wait until running</string>
+			<string>Activate Ulyssis and wait until running then send cmd-O</string>
 			<key>xpos</key>
 			<integer>210</integer>
 			<key>ypos</key>
@@ -2032,10 +2019,10 @@ then highlight query in sheet</string>
 	<key>variables</key>
 	<dict>
 		<key>SemVer</key>
-		<string>1.0</string>
+		<string>1.0.2</string>
 	</dict>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.0.2</string>
 	<key>webaddress</key>
 	<string>github.com/robwalton/alfred-ulysses-workflow</string>
 </dict>

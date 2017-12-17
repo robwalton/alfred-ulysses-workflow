@@ -41,6 +41,9 @@ To install, download a released Ulysses.alfredworkflow and double-click to open 
 
 ## Versions
 
+**1.0.2**
+- Fixed 'uo' command to work with renamed UlyssesMac application name under Ulysses 12 update
+
 **1.0.1**
 - Fixed displayName KeyError exception that **completely broke the workflow with Ulysses 12 update**
 - Fixed an older issue with 'un' command 
