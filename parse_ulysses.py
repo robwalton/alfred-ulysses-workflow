@@ -59,9 +59,18 @@ class Group(Node):
         self.child_groups = []
         self.child_sheets = []
         self.openable_file = join(self.dirpath, 'Info.ulgroup')
-        self.name = plistlib.readPlist(
-            join(self.dirpath, 'Info.ulgroup'))['displayName']
-        self.title = self.name
+        self.name = self.title = self._get_group_name(dirpath)
+
+    def _get_group_name(self, dirpath):
+        if dirpath == ICLOUD_UNFILED_ROOT:
+            return 'Inbox'  # No name in Info.ulgroup since Ulysses 12
+
+        try:
+            return plistlib.readPlist(join(self.dirpath, 'Info.ulgroup'))['displayName']
+        except KeyError:
+            # Be defensive as filesystem is not a supported API and may change
+            logger.warn("Key 'displayName' not found in: " + join(self.dirpath, 'Info.ulgroup'))
+            return os.path.basename(os.path.normpath(dirpath)) # Use innermost directory
 
     def number_descendents(self):
         n = len(self.child_sheets)
