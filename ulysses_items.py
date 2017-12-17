@@ -41,7 +41,7 @@ def main(wf):
 
     # Parse args
     parser = argparse.ArgumentParser()
-    parser.add_argument('query', type=str, nargs='?', default=None,
+    parser.add_argument('query', type=unicode, nargs='?', default=None,
                         help='query used normally for searching')
     parser.add_argument('--kind', dest='kind', type=str, nargs='?',
                         help='items to return: group, sheet or all')
@@ -56,7 +56,9 @@ def main(wf):
                         help='search full path to item, not just node name')
 
     args = parser.parse_args(wf.args)
+    logger.info('~' * 79)
     logger.info('ulysses_items.main(wf): args = \n' + str(args))
+    logger.info('~' * 79)
     validify_args(args)
 
     # Check for updates
