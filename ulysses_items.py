@@ -34,6 +34,8 @@ INBOX_SHEET_BULLET = u'\u25E6'  # white bullet
 
 logger = None
 
+EXTRA_DEBUG = False
+
 
 def main(wf):
 
@@ -121,8 +123,8 @@ def validify_args(args):
     """Validate args"""
     assert args.kind in ('group', 'sheet', 'all')
     if args.limit_scope_dir:
-        assert (os.path.exists(args.limit_scope_dir),
-                "Path does not exist: '%s'" % args.limit_scope_dir)
+        assert os.path.exists(args.limit_scope_dir), \
+                "Path does not exist: '%s'" % args.limit_scope_dir
     if args.query:
         args.query = args.query.strip()
     if args.search_ulysses_path and args.search_content:
@@ -181,7 +183,8 @@ def fuzzy_filter_nodes(wf, nodes, query, search_whole_path):
     def expanded_node_path(node):
         path_list = node.get_alfred_path_list()
         path_list.append(node.title)
-        logger.info(' '.join(path_list))
+        if EXTRA_DEBUG:
+            logger.info(' '.join(path_list))
         return ' '.join(path_list)
 
     def node_title(node):
