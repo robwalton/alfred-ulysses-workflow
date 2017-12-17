@@ -88,8 +88,12 @@ class Sheet(Node):
         Node.__init__(self, dirpath, parent_group)
         self.dirpath = dirpath
         self.openable_file = dirpath
-        with open(join(self.dirpath, 'Text.txt'), 'r') as f:
-            self.first_line = f.readline().decode('utf-8').strip()
+        _sheet_text_path = join(self.dirpath, 'Text.txt')
+        if os.path.exists(_sheet_text_path):
+            with open(_sheet_text_path, 'r') as f:
+                self.first_line = f.readline().decode('utf-8').strip()
+        else:
+            self.first_line = "Unknown Type"
         self.title = self.first_line
 
 
