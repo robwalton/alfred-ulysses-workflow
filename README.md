@@ -41,6 +41,9 @@ To install, download a released Ulysses.alfredworkflow and double-click to open 
 
 ## Versions
 
+**master**
+- Fixed to work with unicode search strings
+
 **1.0.2**
 - Fixed 'uo' command to work with renamed UlyssesMac application name under Ulysses 12 update
 
