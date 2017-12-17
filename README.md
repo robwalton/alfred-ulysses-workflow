@@ -41,6 +41,10 @@ To install, download a released Ulysses.alfredworkflow and double-click to open 
 
 ## Versions
 
+**1.0.1**
+- Fixed displayName KeyError exception that **completely broke the workflow with Ulysses 12 update**
+- Fixed an older issue with 'un' command 
+
 **1.0**
 - Fixed 100% cpu hang on Sierra with update of alfred-workflow to 1.25.1
 - Added `uf` command to find groups and sheets based on their internal content
@@ -65,5 +69,5 @@ To install, download a released Ulysses.alfredworkflow and double-click to open 
 - Initial public release
 
 ## To contribute
-To contribute to the workflow please fork on github: https://github.com/robwalton/alfred-ulysses-workflow
+To contribute to the workflow please fork on github: https://github.com/robwalton/alfred-ulysses-workflow .
 
