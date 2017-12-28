@@ -2019,10 +2019,10 @@ then highlight query in sheet</string>
 	<key>variables</key>
 	<dict>
 		<key>SemVer</key>
-		<string>1.0.2</string>
+		<string>1.0.3</string>
 	</dict>
 	<key>version</key>
-	<string>1.0.2</string>
+	<string>1.0.3</string>
 	<key>webaddress</key>
 	<string>github.com/robwalton/alfred-ulysses-workflow</string>
 </dict>
