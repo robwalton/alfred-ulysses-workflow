@@ -1,9 +1,9 @@
 # Alfred Ulysses Workflow
 
-[Alfred 3 workflow](https://www.alfredapp.com/workflows/) to search and create tasks in [Ulysses](https://ulyssesapp.com).
+[Alfred 3 workflow](https://www.alfredapp.com/workflows/) to search and create tasks in [Ulysses](https://ulyssesapp.com). There is a [discussion thread on the Alfred forum](http://www.alfredforum.com/topic/9662-ulysses-workflow/).
 
 ## Install
-To install, download the [latest Ulysses.alfredworkflow](https://github.com/robwalton/alfred-ulysses-workflow/releases/latest) file and double-click to open in Alfred 3. Alternatively, download what should be the most recent version hosted on [Packal](http://www.packal.org/workflow/ulysses). There is a [discussion thread on the Alfred forum](http://www.alfredforum.com/topic/9662-ulysses-workflow/).
+To install, download the [latest Ulysses.alfredworkflow](https://github.com/robwalton/alfred-ulysses-workflow/releases/latest) file and double-click to open in Alfred 3. Alternatively, download what should be the most recent version hosted on [Packal](http://www.packal.org/workflow/ulysses).
 
 ## Get help
 
@@ -34,14 +34,14 @@ To install, download the [latest Ulysses.alfredworkflow](https://github.com/robw
 - `u:setgroupview` -- Set the view for opening groups with (defaults to 'Sheets')
 
 ## Thanks
+- [dfay](https://www.alfredforum.com/profile/3468-dfay/) for the new sheet code and file opener and importer as well as general encouragement
 - [deanishe](https://www.alfredforum.com/profile/5235-deanishe/) for the awesome [Python workflow library](http://www.deanishe.net/alfred-workflow/index.html)
 - [dunkaroo](https://www.alfredforum.com/profile/11116-dunkaroo/) for searching and file action help
-- [dfay](https://www.alfredforum.com/profile/3468-dfay/) for the new sheet code and file opener and importer
 - [katie](https://www.alfredforum.com/profile/5999-katie/) for thoughts on how find command should work
 
 ## Versions
 
-**master**
+**1.0.3**
 - Fixed to work with unicode search strings
 
 **1.0.2**
