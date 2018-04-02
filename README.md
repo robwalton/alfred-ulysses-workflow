@@ -20,7 +20,7 @@ To install, download the [latest Ulysses.alfredworkflow](https://github.com/robw
 
 - `uo <arg>` -- Search for <arg> within Ulysses’ Open dialogue
 
-## Create or append to sheets
+## Create sheets
 - `un` -- create new sheet with optional text (shift-enter to create in /Inbox)
 
 ## Alfred file action
