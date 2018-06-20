@@ -41,6 +41,9 @@ To install, download the [latest Ulysses.alfredworkflow](https://github.com/robw
 
 ## Versions
 
+**1.0.4**
+- Fixed ExpatError exception that **completely broke the workflow with Ulysses 13 update**.
+
 **1.0.3**
 - Fixed to work with unicode search strings
 

@@ -1,7 +1,10 @@
 import os
 from os.path import join
 import subprocess
-import plistlib
+import biplist  # the built in plistlib does not support binary plist files.
+
+from pyexpat import ExpatError
+
 import workflow
 import logging
 
@@ -66,11 +69,13 @@ class Group(Node):
             return 'Inbox'  # No name in Info.ulgroup since Ulysses 12
 
         try:
-            return plistlib.readPlist(join(self.dirpath, 'Info.ulgroup'))['displayName']
+            return biplist.readPlist(join(self.dirpath, 'Info.ulgroup'))['displayName']
         except KeyError:
             # Be defensive as filesystem is not a supported API and may change
             logger.warn("Key 'displayName' not found in: " + join(self.dirpath, 'Info.ulgroup'))
             return os.path.basename(os.path.normpath(dirpath)) # Use innermost directory
+        except Exception as e:
+            raise Exception("Error while reading '%s'" % join(self.dirpath, 'Info.ulgroup'), e)
 
     def number_descendents(self):
         n = len(self.child_sheets)
